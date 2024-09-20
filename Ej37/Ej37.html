@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 37</title>
+</head>
+<body>
+    <script>
+        var n1 = parseInt(prompt("Introduce una nota: ")),
+        n2 = parseInt(prompt("Introduce una nota: ")),
+        n3 = parseInt(prompt("Introduce una nota: ")), 
+        n4 = parseInt(prompt("Introduce una nota: ")), 
+        n5 = parseInt(prompt("Introduce una nota: "));
+        var aprobados = 0;
+        var suspendidos = 0;
+        //ifs que comparan las notas con el aprobado, y suma segun la condicion, +1 a aprobados o suspendidos
+        if(n1 >= 5){
+            aprobados++;
+        }else{
+            suspendidos++;
+        }
+        if(n2 >= 5){
+            aprobados++;
+        }else{
+            suspendidos++;
+        }
+        if(n3 >= 5){
+            aprobados++;
+        }else{
+            suspendidos++;
+        }
+        if(n4 >= 5){
+            aprobados++;
+        }else{
+            suspendidos++;
+        }
+        if(n5 >= 5){
+            aprobados++;
+        }else{
+            suspendidos++;
+        }
+        document.write("Hay " + aprobados + " aprobados y " + suspendidos + " suspendidos!")
+    </script>
+</body>
+</html>

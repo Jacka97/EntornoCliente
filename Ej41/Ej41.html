@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 41</title>
+</head>
+<body>
+    <script>
+            var horasTrabajadas = parseInt(prompt("Introduce las horas que ha trabajado esta semana"))
+            const tarifaOrdinaria = 12;
+            const tarifaExtra = 16;
+            const horasOrdinarias = 40;
+            var salario = 0;
+        
+            if (horasTrabajadas <= horasOrdinarias) { //Compara las horas trabajadas con las horasOrdinarias
+                salario = horasTrabajadas * tarifaOrdinaria;
+            } else {
+                var horasExtras = horasTrabajadas - horasOrdinarias; //Saca las horas extras trabajadas
+                salario = (horasOrdinarias * tarifaOrdinaria) + (horasExtras * tarifaExtra); //Calcula el sueldo
+            }
+        
+            document.write("El salario del trabajador es de: " + salario);
+        
+        
+       
+        
+    </script>
+</body>
+</html>

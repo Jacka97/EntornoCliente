@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 38</title>
+</head>
+<body>
+    <script>
+        var n1 = parseInt(prompt("Introduce una número: ")),
+        n2 = parseInt(prompt("Introduce una número: ")),
+        n3 = parseInt(prompt("Introduce una número: ")), 
+        n4 = parseInt(prompt("Introduce una número: ")), 
+        n5 = parseInt(prompt("Introduce una número: "));
+        var multiploDe3 = 0;
+      
+        //ifs que comparan el modulo del numero, y suma segun la condicion, +1 a multiplos de 3
+        if(n1 % 3 == 0){
+            multiploDe3++;
+        }
+        if(n2 % 3 == 0){
+            multiploDe3++;
+        }
+        if(n3 % 3 == 0){
+            multiploDe3++;
+        }
+        if(n4 % 3 == 0){
+            multiploDe3++;
+        }
+        if(n5 % 3 == 0){
+            multiploDe3++;
+        }
+        document.write("Hay " + multiploDe3 + " multiplos de 3!")
+    </script>
+</body>
+</html>

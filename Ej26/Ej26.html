@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 26</title>
+</head>
+<body>
+    <script>
+        var repeticiones = 1; // Repeticiones de numeros par (5)
+        var num = parseInt(prompt("Introduce un número"));
+        var producto = 1;
+        do{
+            num++;//Suma 1 en cada iteracion
+        if(num%2 != 0){  // Si el modulo no es 0, el numero es impar, y se sumaria una repeticion y se imprime
+            document.write( num + "<br>")
+            repeticiones++;
+            producto *= num;
+        }
+    }while(repeticiones <=10);
+    document.write("El producto total es "+ producto);
+    </script>
+</body>
+</html>

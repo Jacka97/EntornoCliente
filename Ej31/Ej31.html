@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 31</title>
+</head>
+<body>
+    <script>
+        var n;
+        do{
+        n = prompt("Introduce un numero entre 0 y 10")
+        }while(n < 0 || n > 10);
+        if(n >= 0){
+        document.write("Tabla del " +n+  " <br>")
+        document.write("********* <br>")
+        for(j=1; j<=10; j++){
+        document.writeln(n + " X " + j + " = " +j*n+ " <br>") // Printea cada linea de la tabla de multiplicar
+        }
+        }
+    </script>
+</body>
+</html>

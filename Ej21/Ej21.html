@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 21</title>
+</head>
+<body>
+    <script>
+        var total = 0;
+         do{
+        var num = parseInt(prompt("Introduce un número, si es 0, el programa parara"));
+        if(num != 0){// Diferente de 0
+        total += num; // Suma al total el numero introducido
+        }else{
+            alert("Cerrando");// El numero era 0
+        }
+        }while(num != 0); //Se mantiene en el bucle mientras el número sea distinto de 0
+        document.write("El total es: " + total);
+    </script>
+</body>
+</html>

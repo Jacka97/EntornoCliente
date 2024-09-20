@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercio 35</title>
+</head>
+<body>
+    <script>
+        var repeticiones = parseInt(prompt("Introduce la cantidad de sueldos que vas a introducir: "))
+        var sueldoMAX = 0;
+        for(i = 0; i <= repeticiones; i++){
+            var sueldonuevo = parseInt(prompt("Introduce un sueldo: "))
+            if(sueldoMAX < sueldonuevo){
+                sueldoMAX = sueldonuevo;//Sustituye el valor antiguo por el nuevo, si este es mayor
+            }
+        }
+        document.write("Se han introducido "+ repeticiones + " sueldos <br>");
+        document.write("El sueldo MAX es: "+ sueldoMAX + " <br>");//Muestra el sueldo maximo
+    </script>
+</body>
+</html>

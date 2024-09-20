@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 43</title>
+</head>
+<body>
+    <script>
+         var n1 = parseInt(prompt("Introduce una nota: "));
+         if(n1 > 10){
+            n1 = 10;
+         }
+        var n2 = parseInt(prompt("Introduce una nota: "));
+        if(n2 > 10){
+            n2 = 10;
+         }
+        var n3 = parseInt(prompt("Introduce una nota: "));
+        if(n3 > 10){
+            n3 = 10;
+         }
+        var media = (n1 + n2 + n3)/3; //Calcula la media
+    
+        if(n1 >= 9){
+            document.write("La primera nota es: Sobresaliente");
+        }else if (n1 >= 7){
+            document.write("La primera nota es: notable");
+        }else if (n1 >= 6){
+            document.write("La primera nota es: Bien");
+        }else if (n1 >= 5){
+            document.write("La primera nota es: Aprobado");
+        }else{
+            document.write("La primera nota es: Suspendido");
+        }
+        if(n2 >= 9){
+            document.write("La segunda nota es: Sobresaliente");
+        }else if (n2 >= 7){
+            document.write("La segunda nota es: notable");
+        }else if (n2 >= 6){
+            document.write("La segunda nota es: Bien");
+        }else if (n2 >= 5){
+            document.write("La segunda nota es: Aprobado");
+        }else{
+            document.write("La segunda nota es: Suspendido");
+        }
+        if(n3 >= 9){
+            document.write("La tercera nota es: Sobresaliente");
+        }else if (n3 >= 7){
+            document.write("La tercera nota es: notable");
+        }else if (n3 >= 6){
+            document.write("La tercera nota es: Bien");
+        }else if (n3 >= 5){
+            document.write("La tercera nota es: Aprobado");
+        }else{
+            document.write("La tercera nota es: Suspendido");
+        }
+        //Ifs anidados que dan el boletin de notas segun las introducidas!
+        document.write("La media es: "+ media);
+    </script>
+</body>
+</html>l

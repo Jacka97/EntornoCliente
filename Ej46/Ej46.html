@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 46</title>
+</head>
+<body>
+    <script>
+        var nota1 = parseInt(prompt("Introduce una nota: "));
+        if(nota1 > 10){
+            nota1 = 10;
+        }
+        if(nota1 < 0){
+            nota1 = 0; //Estos ifs se aseguran de que las notas esten en el rango
+        }
+        var nota2 = parseInt(promot("Introduce otra nota"));
+        if(nota2 > 10){
+            nota2 = 10;
+        }
+        if(nota2 < 0){
+            nota2 = 0;
+        }
+        var media = (nota1 + nota2)/2;
+        document.write("Nota del primer control: " + nota1);
+        document.write("Nota del segundo control: " + nota2);
+        document.write("Tu nota de programación es "+ media);
+    </script>
+</body>
+</html>

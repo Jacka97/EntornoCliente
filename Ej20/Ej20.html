@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 20</title>
+</head>
+<body>
+    <script>
+         var numAdivi= parseInt(prompt("Introduce un número para ser adivinado"));
+         var numeros = 0;
+          do{
+        var num = parseInt(prompt("Introduce un número, no parara hasta que aciertes"));
+        numeros++;
+        if(num == numAdivi){// Acierto
+            alert("Has acertado!");
+        }else if (num < numAdivi){ // El numero introducido es menor al numero a adivinar
+            alert("El numero introducido es menor")
+        }else{ // El numero es mayor
+            alert("El número introducido es mayor")
+        }
+        }while(num != numAdivi); //Se mantiene en el bucle mientras el número no sea igual
+        
+    </script>
+</body>
+</html>

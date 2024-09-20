@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 30</title>
+</head>
+<body>
+    <script>
+        var totalEdad = 0;
+        var totalEstatura = 0;
+        var mas18 = 0;
+        var mas175 = 0;
+        for(i = 1; i <= 5; i++){ // 5 iteraciones
+            var edad = parseInt(prompt("Introduce la edad")); //Pide numero por pantalla
+            var altura = parseInt(prompt("Introduce la altura")); //Pide numero por pantalla
+            totalEdad += edad; //Suma a un total, la edad
+            totalEstatura += altura; // Suma a un total, la altura
+            if(edad >= 18){
+                mas18++;
+            }else if(altura >= 1.75){
+                mas175++;
+            }
+
+        }
+        document.write("La media de las edades es "+ totalEdad/5 + "<br>");
+        document.write("El media de la altura es "+ totalEstarura/5 + "<br>");
+        document.write("Hay "+ mas18+ " alumnos mayores de edad <br>");
+        document.write("Hay "+ mas175 + " alumnos de mas de 1,75m <br>");
+    </script>
+</body>
+</html>

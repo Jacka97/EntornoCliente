@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 29</title>
+</head>
+<body>
+    <script>
+        var total = 0;
+        var sueldos = 0;
+        for(i = 1; i <= 10; i++){ // 10 iteraciones
+            var num = parseInt(prompt("Introduce un numero")); //Pide numero por pantalla y lo suma al total
+            if(num > 1000){
+                sueldos++; // Si el sueldo es mayor de mil, suma 1
+            }
+            total += num; //Suma a un total, los sueldos introducidos
+        }
+        document.write("El total de los sueldos superiores a 1000 es "+ sueldos + "<br>");
+        document.write("El total de los sueldos es "+ total + "<br>");
+    </script>
+</body>
+</html>

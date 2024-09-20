@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 33</title>
+</head>
+<body>
+    <script>
+        var totalFacturas = 0;
+        var totalLitros = 0;
+        var totalFacturasMas600 = 0;
+        var facturas = []; // Array para almacenar las facturas
+    
+        for (var i = 1; i <= 3; i++) {
+            var codigo = i; // Asignar un código único por factura
+            var litros = parseFloat(prompt("¿Cuántos litros?"));
+            if(i == 1){
+                var precio = 0.6
+            }else if(i == 2){
+                var precio = 3
+            }else{
+                var precio = 1.25
+            }
+    
+            var totalFactura = litros * precio;
+            totalLitros += litros; // Sumar litros totales
+    
+            if (totalFactura > 600) {
+                totalFacturasMas600++;
+            }
+    
+            totalFacturas += totalFactura;
+    
+            // Guardar los detalles de la factura en el array
+            facturas.push({
+                codigo: codigo,
+                litros: litros,
+                precio: precio,
+                total: totalFactura
+            });
+        }
+    
+        // Mostrar resultados finales
+        document.writeln("Total facturas: " + totalFacturas.toFixed(2) + " euros <br>");
+        document.writeln("Total litros: " + totalLitros.toFixed(2) + " litros <br>");
+        document.writeln("Total facturas mayores a 600 euros: " + totalFacturasMas600 + " <br>");
+    </script>
+    
+</body>
+</html>

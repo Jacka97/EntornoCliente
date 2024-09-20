@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 42</title>
+</head>
+<body>
+    <script>
+        var n1 = parseInt(prompt("Introduce una nota: "));
+         if(n1 > 10){ //Cambia la nota a 10, si la introducida es mayor
+            n1 = 10;
+         }
+        var n2 = parseInt(prompt("Introduce una nota: "));
+        if(n2 > 10){
+            n2 = 10;
+         }
+        var n3 = parseInt(prompt("Introduce una nota: "));
+        if(n3 > 10){
+            n3 = 10;
+         }
+        var media = (n1 + n2 + n3)/3; //Calcula la media
+        document.write("La media es: "+ media);
+    </script>
+</body>
+</html>

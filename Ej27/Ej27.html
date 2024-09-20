@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 27</title>
+</head>
+<body>
+    <script>
+        var n = prompt("Introduce un numero");
+       function factorial(n) { //funcion recursiva que se llama asi misma
+        if (n == 0) {
+            return 1;
+        } else {
+            return n * factorial(n - 1); //caso base
+        }
+    }
+    document.write("El factorial del " + n + " es " + factorial(n));
+    
+    </script>
+</body>
+</html>

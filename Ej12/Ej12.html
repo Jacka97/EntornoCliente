@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+<body>
+    <script>
+        var repeticiones = 1; // Repeticiones de numeros par (5)
+        var num = parseInt(prompt("Introduce un número"));
+        do{
+            num++;//Suma 1 en cada iteracion
+        if(num%2 == 0){  // Si el modulo es 0, el numero es par, y se sumaria una repeticion y se imprime
+            document.write( num + "<br>")
+            repeticiones++;
+        }
+    }while(repeticiones <=5);
+    </script>
+</body>
+</html>
