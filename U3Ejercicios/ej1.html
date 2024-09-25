@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <h1>Fecha</h1>
+    <script>
+
+        var fecha = new Date; //Declaramos el tipo fecha
+        var dias = fecha.getDate();
+        var mes = fecha.getMonth();
+        mes += 1;
+        if (mes <= 9) {
+            mes = "0" + mes; //Como uno de los dos valores es String, concatena de forma automatica
+        }
+
+        var anyo = fecha.getFullYear();
+        document.writeln(dias + "/" + mes + "/" + anyo);
+    </script>
+</body>
+
+</html>

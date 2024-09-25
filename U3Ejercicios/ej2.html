@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <h1>Fecha</h1>
+    <script>
+
+        var fecha = new Date; //Declaramos el tipo fecha
+        var diaSemana;
+        switch (fecha.getDay()) {
+            case 0:
+                diaSemana = "Domingo";
+                break;
+            case 1:
+                diaSemana = "Lunes";
+                break;
+            case 2:
+                diaSemana = "Martes";
+                break;
+            case 3:
+                diaSemana = "Miércoles";
+                break;
+            case 4:
+                diaSemana = "Jueves";
+                break;
+            case 5:
+                diaSemana = "Viernes";
+                break;
+            case 6:
+                diaSemana = "Sábado";
+                break;
+        }
+        var dias = fecha.getDate();
+        var mes;
+        switch (fecha.getMonth()) {
+            case 0:
+                mes = "Enero";
+                break;
+            case 1:
+                mes = "Febrero";
+                break;
+            case 2:
+                mes = "Marzo";
+                break;
+            case 3:
+                mes = "Abril";
+                break;
+            case 4:
+                mes = "Mayo";
+                break;
+            case 5:
+                mes = "Junio";
+                break;
+            case 6:
+                mes = "Julio";
+                break;
+            case 7:
+                mes = "Agosto";
+                break;
+            case 8:
+                mes = "Septiembre";
+                break;
+            case 9:
+                mes = "Octubre";
+                break;
+            case 10:
+                mes = "Noviembre";
+                break;
+            case 11:
+                mes = "Diciembre";
+                break;
+        }
+            var anyo = fecha.getFullYear();
+            var horas = fecha.getHours();
+            var mins = fecha.getMinutes();
+            var secs = fecha.getSeconds();
+            document.writeln(diaSemana + ", " + dias + " de " + mes + " del " + anyo + " a las " + horas + ":" + mins + ":" + secs);
+    </script>
+</body>
+
+</html>
