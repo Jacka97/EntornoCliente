@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Arrays</title>
+</head>
+<body>
+    <script>
+        var biblioteca = []; // Array para almacenar los libros
+        var numLibro = parseInt(prompt("¿Cuántos libros quieres introducir?"));
+        for (var i = 1; i <= numLibro; i++) {
+            var codigo = i; // Asignar un código único por libro
+            var titulo = prompt("¿Cuál es el título del libro?");
+            var autor = prompt("¿Quién es el autor del libro?");
+            var editorial = prompt("¿Cuál es la editorial del libro?");
+            var tema = prompt("¿Cuál es el tema del libro?");
+            var ISBN = prompt("¿Cuál es el ISBN del libro?");
+            var pag = parseInt(prompt("¿Cuántas páginas tiene el libro?"));
+            var precio = parseFloat(prompt("¿Cuál es el precio del libro?")).toFixed(2);
+    
+            // Guardar los detalles del libro en el array
+            biblioteca.push({
+                codigo: codigo,
+                titulo: titulo,
+                autor: autor,
+                editorial: editorial,
+                tema: tema,
+                ISBN: ISBN,
+                pag: pag,
+                precio: precio,
+            });
+        }
+
+        // Crear una tabla para mostrar los libros
+        var tabla = "<table border='1'><tr><th>Código</th><th>Título</th><th>Autor</th><th>Editorial</th><th>Tema</th><th>ISBN</th><th>Páginas</th><th>Precio</th></tr>";
+        for (j = 0; j < biblioteca.length; j++) {
+            tabla += "<tr><td>" + biblioteca[j].codigo + "</td><td>" + biblioteca[j].titulo + "</td><td>" + biblioteca[j].autor + "</td><td>" + biblioteca[j].editorial + "</td><td>" + biblioteca[j].tema + "</td><td>" + biblioteca[j].ISBN + "</td><td>" + biblioteca[j].pag + "</td><td>" + biblioteca[j].precio + "</td></tr>";
+        }
+        tabla += "</table>";
+        document.write(tabla);
+    </script>
+</body>
+</html>
