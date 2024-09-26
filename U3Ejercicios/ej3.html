@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1>Sumar a la fecha actual</h1>
+    <script>
+        var fechaActual = new Date; //Con los set cambiamos los datos del objeto Date, y con el get obtenemos los datos del objeto Date
+        fechaActual.setDate(fechaActual.getDate() + 5);
+        fechaActual.setFullYear(fechaActual.getFullYear() + 10);
+        fechaActual.setMonth(fechaActual.getMonth() + 4);
+
+        document.write(fechaActual.getFullYear() + ", " + fechaActual.getMonth() + ", " + fechaActual.getDate());
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+
+<body>
+    <h1>Fecha inicial y fecha final, calculo de nómina</h1>
+    <script>
+        function calcularNomina(fechaInicio, fechaFin) {
+            var unDia = 24 * 60 * 60 * 1000; // Milisegundos en un día
+            var inicio = new Date(fechaInicio);
+            var fin = new Date(fechaFin);
+            var diasTrabajados = Math.round((fin - inicio) / unDia) + 1; // +1 para incluir el primer día
+            var salarioBruto = diasTrabajados * 55;
+            var retencion = salarioBruto * 0.12;
+            var salarioNeto = salarioBruto - retencion;
+            return salarioNeto;
+        }
+        var fechaInicio = prompt("Introduce la fecha inicial en el siguiente formato, el mes es el segundo dato, el dia el tercero, recuerda los 0: '2024-09-01'");
+        var fechaFin = prompt("Introduce la fecha final en el siguiente formato, el mes es el segundo dato, el dia el tercero, recuerda los 0: '2024-09-01'");
+        var salario = calcularNomina(fechaInicio, fechaFin);
+        document.write('El salario neto es: ' + salario + ' €'); // Salario total 
+
+    </script>
+    
+</body>
+
+</html>

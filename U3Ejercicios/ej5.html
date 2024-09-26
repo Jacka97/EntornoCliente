@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <h1>Introducir horas y fecha, calcular salario</h1>
+    <script>
+        var diaSemana;
+        var salario = 0;
+        var horas = prompt("Introduce el numero de horas trabajadas: ");
+        diaSemana = prompt("Introduce el dia de la semana(0-D 1-L 2-M 3-X 4-J 5-V 6-S): ");
+        switch (diaSemana) { //Switch que asigna segun el valor numérico, el valor de las horas trabajadas
+            case "0":
+                salario = horas * 20;
+                break;
+            default:
+               salario = horas *15;
+                break;
+        }
+        document.write("El salario es de: " + salario);
+
+
+        
+    </script>
+</body>
+</html>

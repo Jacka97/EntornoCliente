@@ -1,0 +1,9 @@
+table, th, td{
+   border: 1px solid;
+   border-collapse: collapse;
+   background-color: aqua;
+   text-align: center;
+}
+td{
+    background-color: blueviolet;
+}

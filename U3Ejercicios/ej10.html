@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+
+<body>
+    <script>
+        // Definimos un array de trabajadores
+        var trabajadores = [
+            { nombre: "Juan", apellidos: "Pérez", sueldo: 3000, fechaAlta: new Date("1975-06-15") },
+            { nombre: "Ana", apellidos: "García", sueldo: 2500, fechaAlta: new Date("1985-09-23") },
+            { nombre: "Luis", apellidos: "Martínez", sueldo: 4000, fechaAlta: new Date("2005-01-12") }
+        ];
+
+        // Función para calcular la retención según la fecha de alta
+        function calcularRetencion(trabajador) {
+            var year = trabajador.fechaAlta.getFullYear();
+            var retencion = 0;
+
+            if (year < 1980) {
+                retencion = 0.20;
+            } else if (year >= 1980 && year <= 2000) {
+                retencion = 0.15;
+            } else {
+                retencion = 0.05;
+            }
+
+            return trabajador.sueldo * retencion;
+        }
+
+        // Recorremos el array y mostramos la retención para cada trabajador
+        trabajadores.forEach(
+            trabajador => {
+            var retencion = calcularRetencion(trabajador);
+            console.log(`Trabajador: ${trabajador.nombre} ${trabajador.apellidos}`);
+            console.log(`Fecha de Alta: ${trabajador.fechaAlta.toDateString()}`);
+            console.log(`Sueldo: ${trabajador.sueldo}`);
+            console.log(`Retención: ${retencion}`);
+            console.log('-------------------------');
+        });
+
+    </script>
+</body>
+
+</html>

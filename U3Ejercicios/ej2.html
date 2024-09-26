@@ -13,7 +13,7 @@
 
         var fecha = new Date; //Declaramos el tipo fecha
         var diaSemana;
-        switch (fecha.getDay()) {
+        switch (fecha.getDay()) { //Switch que asigna segun el valor numérico, el día de la semana
             case 0:
                 diaSemana = "Domingo";
                 break;
@@ -38,7 +38,7 @@
         }
         var dias = fecha.getDate();
         var mes;
-        switch (fecha.getMonth()) {
+        switch (fecha.getMonth()) { // Lo mismo que el switch anterior, pero esta vez con los meses
             case 0:
                 mes = "Enero";
                 break;
@@ -76,6 +76,7 @@
                 mes = "Diciembre";
                 break;
         }
+                // Se asignan el resto de variables y despues se muestra por pantalla
             var anyo = fecha.getFullYear();
             var horas = fecha.getHours();
             var mins = fecha.getMinutes();

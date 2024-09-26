@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+    <h1>Reloj</h1>
+    <div id="reloj"></div>
+    <button onclick="pararTiempo()">Parar tiempo</button>  <!-- Boton para parar el tiempo que llama la funcion-->
+    <script>
+        function refreshReloj() {
+            var reloj = new Date();
+            var hora = reloj.getHours();
+            var minuto = reloj.getMinutes();
+            var segundo = reloj.getSeconds();
+
+            document.getElementById('reloj').innerText = hora + " : " + minuto + " : " + segundo; // document.write no funciona por lo que hay que 
+            //crear un div y escribir en el con innerText
+        }
+
+        var a = setInterval(refreshReloj, 1000); // cada segundo se refresca
+
+        function pararTiempo() { //funcion que para las repeticiones
+            clearInterval(a);
+        }
+    </script>
+</body>
+
+</html>

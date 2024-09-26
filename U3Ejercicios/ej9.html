@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<h1>Periodo de entrega de documentos</h1>
+
+<!-- Introducir la fecha de entrega de un documento y nos diga si está dentro o fuera de plazo -->
+<!-- teniendo en cuenta que la fecha de entrega límite es la fecha actual -->
+<script>
+    var fechaActual = new Date;
+    var fechaIntroducida = new Date(prompt("Introduce la fecha de entrega del documento en el siguiente formato, el mes es el segundo dato, el dia el tercero, recuerda los 0: '2024-09-01'"));
+    var dias = fechaActual.getDate() - fechaIntroducida.getDate();
+    var mes = fechaActual.getMonth() - fechaIntroducida.getMonth();
+    var año = fechaActual.getFullYear() - fechaIntroducida.getFullYear();
+    if( dias && mes && año >= 0){ //Si la resta es 0 o positiva, significa que se entrego a tiempo
+        document.write("El documento ha sido entregado a tiempo");
+    }else{
+        document.write("El documento no ha sido entregado a tiempo");
+    }
+</script>
+<body>
+</body>
+</html>

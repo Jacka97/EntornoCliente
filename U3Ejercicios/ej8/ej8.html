@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Datos del Alumno</title>
+    <link rel="stylesheet" href="ej8.css">
+</head>
+<body>
+    <h1>Datos del alumno</h1>
+    <table>
+
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Calificación</th>
+                <th>Edad</th>
+            </tr>
+        <tr id="alumno-datos">
+        </tr>
+    </table>
+
+    <script>
+        // Datos del alumno
+        var alumno = [1, 'Luis', 'Mas Ros', new Date(1990, 9, 5), 7.5];
+
+        // Calcular la edad
+        var hoy = new Date();
+        var edad = hoy.getFullYear() - alumno[3].getFullYear();
+        var mes = hoy.getMonth() - alumno[3].getMonth();
+        if (mes < 0 || (mes === 0 && hoy.getDate() < alumno[3].getDate())) {
+            edad--;
+        }
+
+        // Crear la fila de la tabla con los datos del alumno
+        var fila = "";
+        fila += "<td>" + alumno[0] + "</td>";
+        fila += "<td>" + alumno[1] + "</td>";
+        fila += "<td>" + alumno[2] + "</td>";
+        fila += "<td>" + alumno[3].toLocaleDateString() + "</td>"; // .toLocaleDateString() cambia la fecha al formato dd/mm/aaaa
+        fila += "<td>" + alumno[4] + "</td>";
+        fila += "<td>" + edad + "</td>";
+
+        // Insertar la fila en la tabla
+        document.getElementById("alumno-datos").innerHTML = fila;
+    </script>
+</body>
+</html>
