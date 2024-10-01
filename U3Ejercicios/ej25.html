@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 25</title>
+</head>
+
+<body>
+    <script>
+        var cadena = "Centro de Estudios IES el Grao";
+
+        // Encontrar la cadena "Estudios" y devolver la subcadena hasta el final
+        var indiceEstudios = cadena.indexOf("Estudios");
+        var subcadenaEstudios = cadena.substring(indiceEstudios);
+        // document.write(cadena);
+        document.write(subcadenaEstudios + "<br>"); // "Estudios IES el Grao"
+
+        // Encontrar el carácter "d" y devolver la subcadena hasta el final
+        var indiceD = cadena.indexOf("d");
+        var subcadenaD = cadena.substring(indiceD);
+        document.write(subcadenaD); // " de Estudios IES el Grao"
+
+    </script>
+</body>
+
+</html>

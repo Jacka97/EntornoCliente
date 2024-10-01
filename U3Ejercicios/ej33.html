@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 33</title>
+</head>
+<body>
+    <script>
+        // Pedir un texto al usuario
+        var texto = prompt("Introduce un texto para encriptar:");
+
+        // Función para encriptar el texto
+        function encriptar(texto) {
+            var encriptado = "";
+            for (var i = 0; i < texto.length; i++) {
+                // Sumar 5 al código ASCII de cada carácter
+                encriptado += String.fromCharCode(texto.charCodeAt(i) + 5);
+            }
+            return encriptado;
+        }
+
+        // Función para desencriptar el texto
+        function desencriptar(textoEncriptado) {
+            var desencriptado = "";
+            for (var i = 0; i < textoEncriptado.length; i++) {
+                // Restar 5 al código ASCII de cada carácter
+                desencriptado += String.fromCharCode(textoEncriptado.charCodeAt(i) - 5);
+            }
+            return desencriptado;
+        }
+
+        // Encriptar el texto
+        var textoEncriptado = encriptar(texto);
+        document.write("<p>Texto encriptado: " + textoEncriptado + "</p>");
+
+        // Desencriptar el texto
+        var textoDesencriptado = desencriptar(textoEncriptado);
+        document.write("<p>Texto desencriptado: " + textoDesencriptado + "</p>");
+    </script>
+</body>
+</html>

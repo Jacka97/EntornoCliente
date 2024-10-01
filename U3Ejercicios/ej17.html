@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 17</title>
+</head>
+
+<body>
+    <div id="resultado"></div>
+
+    <script>
+        // Función para generar una carta aleatoria de la baraja española
+        function extraerCartaAleatoria() {
+            var palos = ["Oros", "Copas", "Espadas", "Bastos"];  // Los 4 palos
+            var numero = Math.floor(Math.random() * 12) + 1;     // Genera un número entre 1 y 12
+            
+            var palo = palos[Math.floor(Math.random() * palos.length)]; // Selecciona un palo al azar
+            return { numero: numero, palo: palo };
+        }
+
+        // Simulación
+        var carta = extraerCartaAleatoria();
+
+        // Mostrar la carta extraída en el documento
+        document.getElementById("resultado").innerText = "Carta extraída: " + carta.numero + " de " + carta.palo;
+    </script>
+</body>
+
+</html>

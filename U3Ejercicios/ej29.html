@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 29</title>
+</head>
+<body>
+    <!-- Crear una variable con el contenido “Fecha: 23-12-2012 Hora: 19,45,00” y sustituir los –
+(guiones) por / (barras) y las , (comas) por : (dos puntos) -->
+    <script>
+        var texto = "Fecha: 23-12-2012 Hora: 19,45,00";
+        var nuevoText1 = texto.replaceAll("-", "/");
+        var nuevoText2 = nuevoText1.replaceAll(",", ":"); //replaceAll cambia todas las ocurrencias
+        document.write(nuevoText2);
+    </script>
+</body>
+</html>

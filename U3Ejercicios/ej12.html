@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+
+<body>
+    <script>
+        // Leer el valor ingresado por el usuario
+        var valor = prompt("Introduce un valor:");
+
+        // Intentar convertir a número con parseInt
+        var valorEntero = parseInt(valor);
+
+        // Intentar convertir a número con parseFloat
+        var valorFlotante = parseFloat(valor);
+
+        // Comprobar si es un número (isNaN devuelve true si no es un número)
+        if (!isNaN(valorEntero)) {
+            document.write("El valor es un número entero.");
+        } else if (!isNaN(valorFlotante)) {
+            document.write("El valor es un número decimal.");
+        } else {
+            document.write("El valor ingresado no es un número.");
+        }
+
+    </script>
+</body>
+
+</html>

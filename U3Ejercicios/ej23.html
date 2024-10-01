@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+            var numero1 = parseFloat(prompt("Introduce el primer número:"));
+            var numero2 = parseFloat(prompt("Introduce el segundo número (divisor):"));
+
+            // Verificamos si el divisor es 0
+            if (numero2 === 0) {
+                // Si el divisor es 0, mostramos un mensaje indicando que la división no es posible
+                document.write("No podemos realizar la división por cero.");
+            } else {
+                // Realizamos la división si el divisor no es cero
+                var resultado = numero1 / numero2;
+                document.write("El resultado de la división es: " + resultado);
+            }
+
+    </script>
+</body>
+
+</html>

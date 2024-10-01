@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Navegador</title>
+</head>
+
+<body>
+    <h1>Detector de Navegador</h1>
+    <div id="resultado" class="navegador"></div>
+
+    <script>
+        var userAgent = navigator.userAgent;
+        var navegador = "";
+        
+
+        if (userAgent.indexOf("Chrome") > -1) {
+            navegador = "Google Chrome";
+
+        } else if (userAgent.indexOf("Firefox") > -1) {
+            navegador = "Mozilla Firefox";
+
+        } else if (userAgent.indexOf("MSIE") > -1 || userAgent.indexOf("Trident") > -1) {
+            navegador = "Internet Explorer";
+
+        } else if (userAgent.indexOf("Opera") > -1 || userAgent.indexOf("OPR") > -1) {
+            navegador = "Opera";
+
+        } else if (userAgent.indexOf("Safari") > -1) {
+            navegador = "Safari";
+
+        } else if (userAgent.indexOf("Edg") > -1) {
+            navegador = "Microsoft Edge";
+
+        } else {
+            navegador = "Desconocido";
+
+        }
+
+        document.write("Navegador : " + navegador + "</br>");
+    
+    </script>
+</body>
+
+</html>

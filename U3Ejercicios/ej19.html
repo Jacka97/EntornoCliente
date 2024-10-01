@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 19</title>
+</head>
+
+<body>
+    <script>
+        // Función para generar una letra aleatoria entre 'A' y 'Z'
+        function generarLetraAleatoria() {
+            var codigoASCII = Math.floor(Math.random() * 26) + 65; // Genera un número entre 65 y 90
+            return String.fromCharCode(codigoASCII); // Convierte el código ASCII en su correspondiente letra
+        }
+
+        // Simulación
+        var letra = generarLetraAleatoria();
+
+        // Mostrar la letra generada en el documento
+        document.write("Letra generada: " + letra);
+
+    </script>
+</body>
+
+</html>
