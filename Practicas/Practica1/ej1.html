@@ -11,30 +11,30 @@
     <script>
 
         function abrirVentanaNoRedimensionable() {
-            const windowFeatures = "left=100,top=100,width=320,height=320";
-            var ventana = window.open("", "miVentana", windowFeatures);
+            const windowFeatures = "left=100,top=100,width=800,height=600"; //Dimensiones de la ventana
+            var ventana = window.open("", "miVentana", windowFeatures); //("contenido", "nombre de ventana", "dimensiones")
             var tieneJava = "";
-            if (navigator.javaEnabled) {
+            if (navigator.javaEnabled) {  //Verifica si el navegador tiene Java instalado
                 tieneJava = "Sí, tiene Java";
             } else {
                 tieneJava = "No, no tiene Java";
             }
-            ventana.document.write(
+            ventana.document.write(  //Escribe en la ventana
 
                 "<h3>Ejemplo de Ventana Nueva</h3>" +
-                "<p>URL de la página: " + location.href + " </p>" +
-                "<p>Protocolo utilizado: " + location.protocol + "</p>" +
-                "<p>User Agent: " + navigator.userAgent + "</p>" +
-                "<p> " + tieneJava + " </p>" +
+                "<p>URL de la página: " + location.href + " </p>" +  //URL de la página actual
+                "<p>Protocolo utilizado: " + location.protocol + "</p>" +   //Protocolo utilizado (http, https, etc.)
+                "<p>User Agent: " + navigator.userAgent + "</p>" +   //Identificador del navegador
+                "<p> " + tieneJava + " </p>" + 
                 "<iframe src='https://www.wikipedia.es'</iframe>"
             );
         }
-        abrirVentanaNoRedimensionable();
+        
         // Solicitar datos al usuario
         let nombre = prompt("Introduzca su nombre y apellidos:");
-        let dia = prompt("Introduzca el DIA de nacimiento:");
-        let mes = prompt("Introduzca el MES de nacimiento:");
-        let año = prompt("Introduzca el AÑO de nacimiento:");
+        let dia = prompt("Introduzca el día de nacimiento:");
+        let mes = prompt("Introduzca el mes de nacimiento:");
+        let año = prompt("Introduzca el año de nacimiento:");
 
         // Procesar datos
         let edad = new Date().getFullYear() - año;
@@ -80,6 +80,8 @@
         document.write("<p>El coseno de 180 es: " + coseno180 + "</p>");
         document.write("<p>El número mayor de (34, 67, 23, 75, 35, 19) es: " + maxNumero + "</p>");
         document.write("<p>Ejemplo de número al azar: " + numeroAleatorio + "</p>");
+        
+        abrirVentanaNoRedimensionable();
     </script>
 </body>
 
