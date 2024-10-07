@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <script>
+    let URLS = [
+    "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "https://www.youtube.com/watch?v=3JZ_D3ELwOQ",
+    "https://www.youtube.com/watch?v=oHg5SJYRHA0",
+    "https://www.youtube.com/watch?v=9bZkp7q19f0",
+    "https://www.youtube.com/watch?v=L_jWH6A6_4M",
+    "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
+    "https://www.youtube.com/watch?v=3AtDnEC4zak",
+    "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+    "https://www.youtube.com/watch?v=KQ6zr6kCPj8",
+    "https://www.youtube.com/watch?v=fLexgOxsZu0"
+    ];
+    function videoRandom(){
+        let aleatorio = Math.floor(Math.random() * URLS.length);
+        return  URLS[aleatorio];
+    }
+    let video = videoRandom();
+    document.write("<iframe src=" + video + "></iframe>");
+
+
+    </script>
+</body>
+</html>

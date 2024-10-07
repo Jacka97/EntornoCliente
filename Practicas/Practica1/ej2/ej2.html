@@ -15,7 +15,19 @@
         let nombre, apellidos, fechaNacimiento, direccion, codigoPostalPobla, idiomas = [], hijos = [], boolean;
         nombre = prompt("Introduce el nombre");
         apellidos = prompt("Introduce los apellidos");
-        fechaNacimiento = new Date(prompt("Introduce la fecha de nacimiento en el siguiente formato '2024-12-28'"));
+        do{
+        let fechaCorrecta = false;
+        fechaNacimiento = prompt("Introduce la fecha de nacimiento en el siguiente formato 'AAAA-MM-DD'");
+        // Validar formato de fecha
+        const fechaRegex = /^\d{4}-\d{2}-\d{2}$/;
+        if (!fechaRegex.test(fechaNacimiento)) {
+        alert("La fecha debe tener el formato AAAA-MM-DD");
+        fechaCorrecta = false;
+        } else {
+        fechaNacimiento = new Date(fechaNacimiento);
+        fechaCorrecta = true;
+        }
+        }while(fechaCorrecta == false);
         direccion = prompt("Introduce la direccion con el siguiente formato 'Calle XXX-Nº XXX-Pta XXX");
         codigoPostalPobla = prompt("Introduce el codigo postal y la poblacion separados con 'guion'");
         do {
@@ -58,13 +70,13 @@
         var tabla = "<table>" + "<tr><th colspan='2'>Datos del Ciudadano</th></tr>";
         tabla += "<tr> " + "<td>Nombre</td> " + "<td>" + apellidos + " " + nombre.toUpperCase() + "</td> " + "</tr>";
         tabla += "<tr> " + "<td>Edad</td> " + "<td>" + edad + "  años</td> " + "</tr>";
-        tabla += "<tr> " + "<td>Calle</td> " + "<td>" + direccion.split("-")[0] + "</td> " + "</tr>";
+        tabla += "<tr> " + "<td>Calle</td> " + "<td>" + direccion.split("-")[0] + "</td> " + "</tr>"; //Split divide en subcadenas usando  el caracter que le indiquemos como separador
         tabla += "<tr> " + "<td>Patio</td> " + "<td>" + direccion.split("-")[1] + "</td> " + "</tr>";
         tabla += "<tr> " + "<td>Puerta</td> " + "<td>" + direccion.split("-")[2] + "</td> " + "</tr>";
         tabla += "<tr> " + "<td>Código Postal</td> " + "<td>" + codigoPostalPobla.split("-")[0] + "</td> " + "</tr>";
         tabla += "<tr> " + "<td>Población</td> " + "<td>" + codigoPostalPobla.split("-")[1].toUpperCase() + "</td> " + "</tr>";
 
-        for (let i = 0; i < idiomas.length; i++) {
+        for (let i = 0; i < idiomas.length; i++) { //Filas de idiomas
             if (i == 0) {
                 tabla += "<tr> " + "<td>Idiomas</td> " + "<td>" + idiomas[i].toLowerCase() + "</td> " + "</tr>";
             } else {
@@ -72,7 +84,7 @@
             }
         }
 
-        for (let i = 0; i < hijos.length; i++) {
+        for (let i = 0; i < hijos.length; i++) {  //Filas de hijos
             if (i == 0) {
                 tabla += "<tr> " + "<td>Hijos</td> " + "<td>" + hijos[i] + "</td> " + "</tr>";
             } else {
@@ -82,7 +94,7 @@
 
         tabla += "</table>"
 
-        // Insertar la tabla en la tabla
+        // Insertar la tabla en el documento
         document.write(tabla);
     </script>
 </body>
