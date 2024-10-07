@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAREA DWEC03</title>
+</head>
+<body>
+    <h1>TAREA DWEC03</h1>
+    <hr />
+
+    <script>
+        // Solicitar datos al usuario
+        let nombre = prompt("Introduzca su nombre y apellidos:");
+        let dia = prompt("Introduzca el DIA de nacimiento:");
+        let mes = prompt("Introduzca el MES de nacimiento:");
+        let año = prompt("Introduzca el AÑO de nacimiento:");
+
+        // Procesar datos
+        let edad = new Date().getFullYear() - año;
+        let primeraLetraA = nombre.indexOf('a') !== -1 ? nombre.indexOf('a') + 1 : -1; // +1 para posición humana
+        let ultimaLetraA = nombre.lastIndexOf('a') !== -1 ? nombre.lastIndexOf('a') + 1 : -1;
+        let nombreSinTresPrimeras = nombre.slice(3);
+        let nombreMayusculas = nombre.toUpperCase();
+        let coseno180 = Math.cos(180 * Math.PI / 180); // Convertir grados a radianes
+        let maxNumero = Math.max(34, 67, 23, 75, 35, 19);
+        let numeroAleatorio = Math.random();
+
+        // Imprimir resultados en la ventana principal
+        document.write(`<p>Buenos días ${nombre}</p>`);
+        document.write(`<p>Tu nombre tiene ${nombre.length} caracteres, incluidos espacios.</p>`);
+        document.write(`<p>La primera letra 'A' de tu nombre está en la posición: ${primeraLetraA}</p>`);
+        document.write(`<p>La última letra 'A' de tu nombre está en la posición: ${ultimaLetraA}</p>`);
+        document.write(`<p>Tu nombre menos las 3 primeras letras es: ${nombreSinTresPrimeras}</p>`);
+        document.write(`<p>Tu nombre todo en mayúsculas es: ${nombreMayusculas}</p>`);
+        document.write(`<p>Tu edad es: ${edad} años.</p>`);
+        document.write(`<p>Naciste un feliz ${dia} de ${mes} del año ${año}.</p>`);
+        document.write(`<p>El coseno de 180 es: ${coseno180}</p>`);
+        document.write(`<p>El número mayor de (34, 67, 23, 75, 35, 19) es: ${maxNumero}</p>`);
+        document.write(`<p>Ejemplo de número al azar: ${numeroAleatorio}</p>`);
+    </script>
+</body>
+</html>
+l 
