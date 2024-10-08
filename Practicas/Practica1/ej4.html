@@ -8,23 +8,24 @@
 <body>
     <script>
     let URLS = [ // 10 URLS de videos de YT
-    "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "https://www.youtube.com/watch?v=3JZ_D3ELwOQ",
-    "https://www.youtube.com/watch?v=oHg5SJYRHA0",
-    "https://www.youtube.com/watch?v=9bZkp7q19f0",
-    "https://www.youtube.com/watch?v=L_jWH6A6_4M",
-    "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
-    "https://www.youtube.com/watch?v=3AtDnEC4zak",
-    "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
-    "https://www.youtube.com/watch?v=KQ6zr6kCPj8",
-    "https://www.youtube.com/watch?v=fLexgOxsZu0"
+    "https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1",
+    "https://www.youtube.com/watch?v=3JZ_D3ELwOQ?autoplay=1",
+    "https://www.youtube.com/watch?v=oHg5SJYRHA0?autoplay=1",
+    "https://www.youtube.com/watch?v=9bZkp7q19f0?autoplay=1",
+    "https://www.youtube.com/watch?v=L_jWH6A6_4M?autoplay=1",
+    "https://www.youtube.com/watch?v=2Vv-BfVoq4g?autoplay=1",
+    "https://www.youtube.com/watch?v=3AtDnEC4zak?autoplay=1",
+    "https://www.youtube.com/watch?v=Zi_XLOBDo_Y?autoplay=1",
+    "https://www.youtube.com/watch?v=KQ6zr6kCPj8?autoplay=1",
+    "https://www.youtube.com/watch?v=fLexgOxsZu0?autoplay=1"
     ];
     function videoRandom(){  // función que devuelve una URL aleatoria
         let aleatorio = Math.floor(Math.random() * URLS.length);
         return  URLS[aleatorio];
     }
     let video = videoRandom(); // asignamos una URL del array a la variable
-    document.write("<iframe src=" + video + "></iframe>");
+    document.write("<iframe src=" + video + "></iframe> <br>");
+    document.write("<a href=" + video +">" +  video + "</a>");
 
 
     </script>
