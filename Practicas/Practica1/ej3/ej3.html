@@ -9,19 +9,23 @@
 </head>
 
 <body>
+    <div id="zonadibujo"></div>
     <script>
         function color() {
-            return Math.floor(Math.random() * 255);
+            return Math.floor(Math.random() * 256); // Numero aleatorio entre 0 y 255
         }
-        document.write("<table >");
-        for (let i = 0; i < 30; i++) {
-            document.write("<tr>");
+        
+        let tabla = document.createElement('table');
+        for (let i = 0; i < 30; i++) { // For que printea la tabla
+            let fila = document.createElement('tr');
             for (let j = 0; j < 30; j++) {
-                document.write(`<td style="background-color: rgb(${color()} ${color()} ${color()});"></td>`);
+                let celda = document.createElement('td');
+                celda.style.backgroundColor = `rgb(${color()} ${color()} ${color()})`;
+                fila.appendChild(celda);
             }
-            document.write("</tr>");
+            tabla.appendChild(fila);
         }
-        document.write("</table>");
+        document.getElementById("zonadibujo").appendChild(tabla);
     </script>
 </body>
 </html>

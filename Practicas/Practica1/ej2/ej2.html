@@ -15,20 +15,18 @@
         let nombre, apellidos, fechaNacimiento, direccion, codigoPostalPobla, idiomas = [], hijos = [], boolean;
         nombre = prompt("Introduce el nombre");
         apellidos = prompt("Introduce los apellidos");
-        do{
-        let fechaCorrecta = false;
-        fechaNacimiento = prompt("Introduce la fecha de nacimiento en el siguiente formato 'AAAA-MM-DD'");
-        // Validar formato de fecha
-        const fechaRegex = /^\d{4}-\d{2}-\d{2}$/;
-        if (!fechaRegex.test(fechaNacimiento)) {
-        alert("La fecha debe tener el formato AAAA-MM-DD");
-        fechaCorrecta = false;
-        } else {
-        fechaNacimiento = new Date(fechaNacimiento);
-        fechaCorrecta = true;
-        }
-        }while(fechaCorrecta == false);
-        direccion = prompt("Introduce la direccion con el siguiente formato 'Calle XXX-Nº XXX-Pta XXX");
+        do {
+            fechaNacimiento = prompt("Introduce la fecha de nacimiento en el siguiente formato 'AAAA-MM-DD'");
+            const fechaRegex = /^\d{4}-\d{2}-\d{2}$/;
+            if (!fechaRegex.test(fechaNacimiento)) {
+                alert("La fecha debe tener el formato AAAA-MM-DD");
+                let boolean = false;
+            } else {
+                let boolean = true;
+                fechaNacimiento = new Date(fechaNacimiento);
+            }
+        } while (boolean == false);
+        direccion = prompt("Introduce la direccion con el siguiente formato 'Calle XXX - Nº XXX - Pta XXX (Separados por guiones)");
         codigoPostalPobla = prompt("Introduce el codigo postal y la poblacion separados con 'guion'");
         do {
             boolean = true;
