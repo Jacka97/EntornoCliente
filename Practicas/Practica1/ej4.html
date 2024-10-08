@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-    let URLS = [
+    let URLS = [ // 10 URLS de videos de YT
     "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "https://www.youtube.com/watch?v=3JZ_D3ELwOQ",
     "https://www.youtube.com/watch?v=oHg5SJYRHA0",
@@ -19,11 +19,11 @@
     "https://www.youtube.com/watch?v=KQ6zr6kCPj8",
     "https://www.youtube.com/watch?v=fLexgOxsZu0"
     ];
-    function videoRandom(){
+    function videoRandom(){  // función que devuelve una URL aleatoria
         let aleatorio = Math.floor(Math.random() * URLS.length);
         return  URLS[aleatorio];
     }
-    let video = videoRandom();
+    let video = videoRandom(); // asignamos una URL del array a la variable
     document.write("<iframe src=" + video + "></iframe>");
 
 

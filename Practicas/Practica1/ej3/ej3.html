@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <link rel="stylesheet" href="ej3.css">
+</head>
+
+<body>
+    <script>
+        function color() {
+            return Math.floor(Math.random() * 255);
+        }
+        document.write("<table >");
+        for (let i = 0; i < 30; i++) {
+            document.write("<tr>");
+            for (let j = 0; j < 30; j++) {
+                document.write(`<td style="background-color: rgb(${color()} ${color()} ${color()});"></td>`);
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+</html>
