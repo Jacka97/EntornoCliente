@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Citas Médicas</title>
+    <link rel="stylesheet" href="ej3.css">
+</head>
+<body>
+    <script src="ej3.js"></script>
+    <div class="container">
+        <h1>Gestión de Citas Médicas</h1>
+        <div class="cita-section">
+            <h2>Citarse</h2>
+            <input type="text" id="nombrePaciente" name="nombrePaciente" placeholder="Nombre del paciente">
+            <input type="number" id="numeroConsulta" name="numeroConsulta" placeholder="Número de consulta">
+            <button onclick="agregarCita()">Citarse</button>
+        </div>
+        
+        <div class="consultas-section">
+            <h2>Consultas</h2>
+            <div id="consultas"></div>
+        </div>
+
+        <div class="lista-pacientes">
+            <h2>Pacientes Citados</h2>
+            <div id="listaPacientes"></div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

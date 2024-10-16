@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej1</title>
+</head>
+
+<body>
+    <script src="Hospital.js"></script> 
+    <script src="Medico.js"></script> 
+    <script>
+        let hospitalRivera = new Hospital(0, "hospitalRivera", "direccion", "telefono", "poblacion", "codPostal");
+        let medicoDigestivo = new Medico(0, "Juan", "apellidos", "dni", "direccion", "telefono", "poblacion", "codPostal", "fechaNacimiento", "Gastro", 1000, hospitalRivera);
+        let medicoTraumatologo = new Medico(1, "Manuel", "apellidos", "dni", "direccion", "telefono", "poblacion", "codPostal", "fechaNacimiento", "Traumatologia", 1000, hospitalRivera);
+        medicoTraumatologo.cambiaSueldo(2300);
+        hospitalRivera.mostrarHospital();
+        let retencion1 = medicoDigestivo.retencionMedico(500);
+        let retencion2 = medicoTraumatologo.retencionMedico(500);
+        document.write("Antes de aplicar la rentencion <br>");
+        medicoDigestivo.mostrarDatos();
+        medicoTraumatologo.mostrarDatos();
+        document.write("Despues de aplicar la rentencion <br>");
+        medicoDigestivo.cambiaSueldo(retencion1);
+        medicoTraumatologo.cambiaSueldo(retencion2);
+        medicoDigestivo.mostrarDatos();
+        medicoTraumatologo.mostrarDatos();
+
+
+    </script>
+</body>
+
+</html>

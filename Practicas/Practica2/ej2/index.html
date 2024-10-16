@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arrayNumeros = [];
+        do{
+            var num = parseInt(prompt("Introduce un número:"));
+            if(num == isNaN){
+                alert("No es un número");
+            }else if(num == 0){
+                alert("Finalizada la introduccion de datos, abriendo pagina");
+            }else{arrayNumeros.push(num);}
+            
+        }while(num != 0);
+        document.write("La longitud del array es: " +  arrayNumeros.length + "<br>");
+        arrayNumeros = arrayNumeros.reverse(); // invierte el orden del array
+        document.write("Array invertido :");
+        for(let i = 0;  i < arrayNumeros.length; i++){  // recorre el array
+            document.write(arrayNumeros[i]);
+            delete(arrayNumeros[i]); //elimina el elemento del array que muestra
+        }
+
+
+        document.write("<br>La longitud del array es: " +  arrayNumeros.length);
+
+    </script>
+</body>
+</html>
