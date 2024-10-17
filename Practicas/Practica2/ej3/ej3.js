@@ -50,6 +50,7 @@ function actualizarListaPacientes() {
     const listaPacientesDiv = document.getElementById("listaPacientes");
     listaPacientesDiv.innerHTML = "";
     pacientes.forEach(paciente => {
-        listaPacientesDiv.innerHTML += "<p>" + paciente + "</p>";
+        listaPacientesDiv.innerHTML += "<p>Paciente: " + paciente + "</p>";
     });
+    listaPacientesDiv.appendChild(div);
 }

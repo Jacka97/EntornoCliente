@@ -8,12 +8,11 @@ h1, h2 {
 }
 input {
     padding: 10px;
-    margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 button {
-    padding: 10px 15px;
+    padding: 10px;
     background-color: #28a745;
     color: white;
     border: none;
