@@ -6,14 +6,14 @@ function Factura(empresa, cliente, detalle, tIva, formaPago) {
         telefono: empresa.telefono,
         nif: empresa.nif
     };
-    
+    //Propiedades  del cliente
     this.cliente = {
         nombre: cliente.nombre,
         direccion: cliente.direccion,
         telefono: cliente.telefono,
         nif: cliente.nif
     };
-    
+
     this.detalle = detalle; // Este será un array de objetos { descripcion, precio, cantidad }
     this.tIva = tIva; // Tipo de IVA en porcentaje
     this.formaPago = formaPago; // Forma de pago
@@ -22,24 +22,24 @@ function Factura(empresa, cliente, detalle, tIva, formaPago) {
 }
 
 // Método para calcular el total de la factura
-Factura.prototype.calculaTotal = function() {
+Factura.prototype.calculaTotal = function () {
     this.baseImponible = this.detalle.reduce((total, item) => {
         return total + (item.precio * item.cantidad);
     }, 0);
-    
+
     const iva = this.baseImponible * (this.tIva / 100);
     this.importeTotal = this.baseImponible + iva;
 };
 
 // Método para mostrar el total de la factura
-Factura.prototype.muestraTotal = function() {
-    console.log(`Importe Total: ${this.importeTotal.toFixed(2)}€`);
+Factura.prototype.muestraTotal = function () {
+    console.log("Importe Total: " + this.importeTotal.toFixed(2) + "€");
     console.log(`IVA Aplicado: ${this.baseImponible * (this.tIva / 100).toFixed(2)}€`);
     console.log(`Forma de Pago: ${this.formaPago}`);
 };
 
 // Método para imprimir la factura
-Factura.prototype.imprimirFactura = function() {
+Factura.prototype.imprimirFactura = function () {
     const facturaHTML = `
         <h1>Factura</h1>
         <h2>Empresa</h2>
@@ -65,12 +65,12 @@ Factura.prototype.imprimirFactura = function() {
         <p>Importe Total: ${this.importeTotal.toFixed(2)}€</p>
         <p>Forma de Pago: ${this.formaPago}</p>
     `;
-    
+
     document.body.innerHTML += facturaHTML; // Imprime la factura en el documento actual
-    
+
 };
- // Crear una instancia de Factura
- const empresa = {
+// Crear una instancia de Factura
+const empresa = {
     nombre: "Empresa XYZ",
     direccion: "Calle Falsa 123",
     telefono: "123456789",
@@ -92,6 +92,6 @@ const detalle = [
 const tIva = 21; // Tipo de IVA en porcentaje
 const formaPago = "Tarjeta de Crédito";
 const factura = new Factura(empresa, cliente, detalle, tIva, formaPago);
-        factura.calculaTotal();
-        factura.muestraTotal();
-        factura.imprimirFactura();
+factura.calculaTotal();
+factura.muestraTotal();
+factura.imprimirFactura();

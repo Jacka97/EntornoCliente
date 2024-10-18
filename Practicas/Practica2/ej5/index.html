@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <script src="ej5.js"></script>
+    <script>
+        let edificioA = new Edificio("Garcia Prieto", 58, 15706);
+        let edificioB = new Edificio("Camino Caneiro", 29, 32004);
+        let edificioC = new Edificio("San Clemente", "s/n", 15705);
+
+        // Agregar plantas y puertas al edificio A
+        edificioA.agregarPlantasYPuertas(2, 3);
+
+        // Agregar propietarios al edificio A
+        edificioA.agregarPropietario("Jose Antonio Lopez", 1, 1);
+        edificioA.agregarPropietario("Luisa Martinez", 1, 2);
+        edificioA.agregarPropietario("Marta Castellón", 1, 3);
+        edificioA.agregarPropietario("Antonio Pereira", 2, 2);
+
+        // Imprimir propietarios del edificio A
+        edificioA.imprimePlantas();
+
+        // Agregar una planta y un propietario más
+        edificioA.agregarPlantasYPuertas(1, 3);
+        edificioA.agregarPropietario("Pedro Meijide", 3, 2);
+
+        // Imprimir nuevamente propietarios del edificio A
+        edificioA.imprimePlantas();
+    </script>
+</body>
+
+</html>
