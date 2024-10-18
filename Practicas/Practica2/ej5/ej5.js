@@ -33,7 +33,7 @@ class Edificio {
     imprimeCodPostal() {
         console.log(this.codPostal);
     }
-    agregarPlantasYPuertas(numPlantas, puertas){  // numPlantas = numero de plantas, puertas = array de puertas
+    agregarPlantasYPuertas(numPlantas, puertas){  // numPlantas = numero de plantas, puertas = numero de puertas por planta
         for (let i = 0; i < numPlantas; i++) {
             let nuevaPlanta = [];
             for (let j = 0; j < puertas; j++) {
