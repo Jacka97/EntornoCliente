@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+
+<body>
+    <form action="" method="post">
+        <fieldset>
+            <legend>Alta de Personas</legend>
+
+            <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" pattern="[0-9]{8}[A-Z]{1}" required>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" maxlength="35" required><br><br>
+
+
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad"><br><br>
+            <label for="poblacion">Poblacion</label>
+            <select id="poblacion" name="poblacion" required>
+                <option disabled selected>Selecione una poblacion</option>
+                <option value="Madrid">Madrid</option>
+                <option value="Barcelona">Barcelona</option>
+                <option value="Valencia">Valencia</option>
+                <option value="Sevilla">Sevilla</option>
+                <option value="Zaragoza">Zaragoza</option>
+            </select><br><br>
+
+
+
+            <label for="comentario">Observacion:</label>
+            <textarea id="comentario" name="comentario" rows="6" cols="60"></textarea><br><br>
+
+            <button type="submit">Enviar</button>
+        </fieldset>
+    </form>
+    <script>
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <script>
+        function updatePriceValue(value) {
+            document.getElementById('priceValue').textContent = value;
+        }
+        function updateMetersValue(value) {
+            document.getElementById('metrosS').textContent = value;
+        }
+        function updateAlturaValue(value) {
+            document.getElementById('altura').textContent = value;
+        }
+        function updateHabitacionesValue(value) {
+            document.getElementById('habitacion').textContent = value;
+        }
+        function updateBañosValue(value) {
+            document.getElementById('baño').textContent = value;
+        }
+        </script>
+    <form action="form" method="post">
+        <fieldset>
+            <legend>Datos del Inmueble</legend>
+
+        <label for="nombreMueble">Tipo de Inmueble:</label> 
+        <select id="nombreMueble">
+            <option value="piso">Piso</option>
+            <option value="adosado">Adosado</option>
+            <option value="parcela">Parcela</option>
+            <option value="casa">Casa</option>
+            <option value="chalet">Chalet</option>
+            <option value="local">Local</option>
+            <option value="nave">Nave</option>
+        </select><br><br>
+
+        <label for="provincia">Provincia:</label>
+        <input type="text"  list="provincia" name="provincia"><br><br>
+        <datalist id="provincia">
+            <option value="Madrid"></option>
+            <option value="Barcelona"></option>
+            <option value="Valencia"></option>
+            <option value="Murcia"></option>
+        </datalist>
+
+        <label for="ubicacion">Ubicación</label>
+        <select id="ubicacion">
+            <option value="centro">centro</option>
+            <option value="sur">sur</option>
+            <option value="este">este</option>
+            <option value="oeste">oeste</option>
+            <option value="ronda">ronda</option>
+            <option value="periferia">periferia</option>
+        </select><br><br>
+
+        <label for="precioMax">Precio</label>
+        <input type="range" id="precioMax" min="0" max="5000000" step="10000" oninput="updatePriceValue(this.value)">
+        <span id="priceValue">0</span><br><br>
+
+        <label for="metros">Metros ²</label>
+        <input type="range" id="metros" min="0" max="5000" step="50" oninput="updateMetersValue(this.value)">
+        <span id="metrosS">0</span><br><br>
+
+        <label for="altura">Altura</label>
+        <input type="range" id="altur" min="0" max="40" step="1" oninput="updateAlturaValue(this.value)">
+        <span id="altura">0</span><br><br>
+
+        <label for="metros">Habitaciones</label>
+        <input type="range" id="metros" min="0" max="10" step="1" oninput="updateHabitacionesValue(this.value)">
+        <span id="habitacion">0</span><br><br>
+    
+        <label for="wc">Baños</label>
+        <input type="range" id="wc" min="0" max="5" step="1" oninput="updateBañosValue(this.value)">
+        <span id="baño">0</span><br><br>
+
+        <fieldset>
+            <legend>Características del Inmueble</legend>
+            
+            <label><input type="checkbox" name="calefaccion"> Calefacción</label><br>
+            <label><input type="checkbox" name="aire_acondicionado"> Aire Acondicionado</label><br>
+            <label><input type="checkbox" name="garaje"> Garaje</label><br>
+            <label><input type="checkbox" name="trastero"> Trastero</label><br>
+            <label><input type="checkbox" name="piscina"> Piscina</label><br>
+            <label><input type="checkbox" name="ascensor"> Ascensor</label><br>
+            <label><input type="checkbox" name="exterior"> Exterior</label><br>
+            <label><input type="checkbox" name="terraza"> Terraza</label><br>
+            <label><input type="checkbox" name="amueblado"> Amueblado</label><br>
+            
+        </fieldset>
+
+        <fieldset>
+            <legend>Otros datos</legend>
+        <label for="playa">Distancia del inmueble a la playa</label>
+        <br>
+        <label for="playa">Cerca</label>
+        <input type="range" id="wc" min="0" max="5" step="1">
+        <label for="playa">Lejos</label>
+        <br><br>
+
+        <fieldset>
+            <legend>Estado del inmueble:</legend>
+          
+            <input type="radio" id="indiferente" name="estado" value="indiferente" checked />
+              <label for="indiferente">Indiferente</label>
+
+              <input type="radio" id="nuevo" name="estado" value="nuevo"/>
+              <label for="nuevo">Nuevo</label>
+            
+          
+            
+              <input type="radio" id="buenEstado" name="estado" value="dewey" />
+              <label for="buenEstado">Buen estado</label>
+            
+          
+            
+              <input type="radio" id="paraReformar" name="estado" value="louie" />
+              <label for="paraReformar">Para reformar</label>
+            
+          </fieldset>
+            
+        </fieldset>
+
+
+        </fieldset>
+        <fieldset>
+            <legend>Datos personales</legend>
+        <label for="nombre">Nombre:</label> 
+        <input type="text" id="nombre" name="nombre" maxlength="35"><br><br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" maxlength="75"><br><br>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="fecha_nacimiento">Fecha Nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"><br><br>
+
+        <label for="dni">DNI:</label>
+        <input type="password" id="dni" name="dni"><br><br>
+
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" name="comentario" rows="6" cols="60"></textarea><br><br>
+        
+        <input type="hidden" id="fechaActual" name="fechaActual">
+
+        <script>
+            // Función para formatear la fecha
+            function formatearFecha(fecha) {
+                const dia = String(fecha.getDate()).padStart(2, '0');
+                const mes = String(fecha.getMonth() + 1).padStart(2, '0'); // Los meses son 0-indexados
+                const anio = fecha.getFullYear();
+                return `${dia}/${mes}/${anio}`;
+            }
+        
+            // Obtener la fecha actual y asignarla al campo oculto
+            const fechaActual = new Date();
+            document.getElementById('fechaActual').value = formatearFecha(fechaActual);
+        </script>
+        
+        </fieldset>
+        <input type="image" src="../imgs/css3.png" alt="submit" width="200" height="100">
+
+        <button type="reset">Restablecer formulario</button>
+    </form>
+</body>
+</html>

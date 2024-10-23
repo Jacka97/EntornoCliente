@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de socio</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h1>Registro de socio</h1>
+    <form id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" minlength="3" maxlength="30">
+        <br><br>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" minlength="3" maxlength="">
+        <br><br>
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" minlength="3" maxlength="50">
+        <br><br>
+        <label for="poblacion">Población:</label>
+        <input type="text" id="poblacion" name="poblacion" minlength="3" maxlength="30">
+        <br><br>
+        <label for="codigoPostal">Código Postal:</label>
+        <input type="text" id="codigoPostal" name="codigoPostal" pattern="[0-9]{5}">
+        <br><br>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" pattern="[9]{1}[0-9]{8}" >
+        <br><br>
+        <label for="movil">Móvil:</label>
+        <input type="text" id="movil" name="movil" pattern="[6]{1}[0-9]{8}" >
+        <br><br>
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" pattern="[0-9]{8}[A-Z]{1}">
+        <br><br>
+        <label for="numCuentaCorriente">Num. Cuenta Corriente:</label>
+        <input type="text" id="numCuentaCorriente" name="numCuentaCorriente" minlength="20" pattern="[0-9]{20}">
+        <br><br>
+        <label for="cuotaMensual">Cuota Mensual:</label>
+        <input type="number" id="cuotaMensual" name="cuotaMensual" min="0" minlength="1">
+        <br><br>
+        <label for="fechaNacimiento">Fecha Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" >
+        <br><br>
+        <label for="numHijos">Num. Hijos:</label>
+        <input type="number" id="numHijos" name="numHijos" min="0"  max="10">
+        <br><br>
+        <label for="email">Dirección de correo Electrónico:</label>
+        <input type="email" id="email" name="email" >
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+    <script src="formulario.js"></script>
+</body>
+</html>
