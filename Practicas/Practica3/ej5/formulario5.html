@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Logueo</title>
+    <style>
+        /* Aquí puedes añadir tus estilos CSS personalizados */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="loginForm">
+        <fieldset>
+            <legend>Formulario de Logueo</legend>
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required><br>
+
+            <label for="clave">Clave:</label>
+            <input type="password" id="clave" name="clave" required><br>
+
+            <label for="color">Color de Fondo:</label>
+            <input type="color" id="color" name="color"><br>
+
+            <label for="recordar">Recordar:</label>
+            <input type="checkbox" id="recordar" name="recordar">
+
+            <button type="submit" id="enviar">Enviar</button>
+        </fieldset>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Cargar cookies si existen
+            if (document.cookie.indexOf("usuario=") !== -1) {
+                const cookies = document.cookie.split("; ");
+                cookies.forEach(cookie => {
+                    const [key, value] = cookie.split("=");
+                    if (key === "usuario") document.getElementById("usuario").value = value;
+                    if (key === "clave") document.getElementById("clave").value = value;
+                    if (key === "color") {
+                        document.getElementById("color").value = value;
+                        document.body.style.backgroundColor = value;
+                    }
+
+                });
+            }
+
+            const loginForm = document.getElementById("loginForm");
+
+            loginForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Evitar el envío del formulario por defecto
+                if (document.getElementById("recordar").checked) {
+                    // Guardar los valores en cookies
+                    document.cookie = `usuario=${document.getElementById("usuario").value}; path=/`;
+                    document.cookie = `clave=${document.getElementById("clave").value}; path=/`;
+                    document.cookie = `color=${document.getElementById("color").value}; path=/`;
+                }
+
+
+            });
+            document.getElementById("enviar").addEventListener("click", function () {
+                window.location.reload();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

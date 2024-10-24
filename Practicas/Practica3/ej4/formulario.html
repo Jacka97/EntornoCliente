@@ -5,34 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   
+    <style>
+        /* Establecemos algunos estilos básicos para el cuerpo */
+body {
+    background-color: #f2f2f2; /* Color de fondo */
+    margin: 0; /* Eliminamos márgenes */
+    padding: 0; /* Eliminamos el relleno */
+}
+
+/* Estilo para el encabezado */
+h1, h2, h5 {
+    text-align: center; /* Centramos el texto */
+}
+
+/* Estilo para el formulario */
+form {
+    background-color: #fff; /* Color de fondo blanco */
+    border: 1px solid #f0505ccc; /* Borde gris claro */
+    padding: 20px; /* Relleno */
+    max-width: 600px; /* Ancho máximo */
+    margin: 20px auto; /* Centramos el formulario */
+}
+
+/* Estilo para los mensajes de error */
+span {
+    color: red; /* Color rojo para el texto */
+}
+
+
+
+    </style>
 </head>
 
 <body>
-    <form action="" method="post">
+    <h1>Ejercicio 4</h1>
+    <form id="formulario" action="" method="post">
         <fieldset>
-            <legend>Alta de Personas</legend>
+            <legend><h2>Alta de Personas</h2></legend>
+            <h5>Rellene los siguientes datos para inscribir a una persona</h5>
 
             <label for="dni">DNI:</label>
-        <input type="text" id="dni" name="dni" pattern="[0-9]{8}[A-Z]{1}" required>
+            <input type="text" id="dni" name="dni">
+            <span id="errorDNI"></span>
+            <br>
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" maxlength="35" required><br><br>
-
-
+            <input type="text" id="nombre" name="nombre">
+            <span id="errorNombre"></span>
+            <br>
+            <label for="foto">Foto:</label>
+            <input type="file" id="foto" name="foto"><br>
 
             <label for="edad">Edad:</label>
-            <input type="number" id="edad" name="edad"><br><br>
+            <input type="number" id="edad" name="edad" min="1">
+            <span id="errorFoto"></span><br>
+
             <label for="poblacion">Poblacion</label>
-            <select id="poblacion" name="poblacion" required>
-                <option disabled selected>Selecione una poblacion</option>
+            <select id="poblacion" name="poblacion">
+                <option disabled selected value="">Seleccione una poblacion</option>
                 <option value="Madrid">Madrid</option>
                 <option value="Barcelona">Barcelona</option>
                 <option value="Valencia">Valencia</option>
                 <option value="Sevilla">Sevilla</option>
                 <option value="Zaragoza">Zaragoza</option>
-            </select><br><br>
-
-
+            </select>
+            <span id="errorPoblacion"></span><br><br>
 
             <label for="comentario">Observacion:</label>
             <textarea id="comentario" name="comentario" rows="6" cols="60"></textarea><br><br>
@@ -41,7 +77,74 @@
         </fieldset>
     </form>
     <script>
-        
+        const dni = document.getElementById("dni");
+        const nombre = document.getElementById("nombre");
+        const edad = document.getElementById("edad");
+        const poblacion = document.getElementById("poblacion");
+        const comentario = document.getElementById("comentario");
+        const errorDNI = document.getElementById("errorDNI");
+        const errorNombre = document.getElementById("errorNombre");
+        const errorPoblacion = document.getElementById("errorPoblacion");
+        const errorEdad = document.getElementById("errorEdad");
+        const patronDNI = new RegExp("^[0-9]{8}[A-Z]{1}$");
+
+        function required() {
+            dni.style.backgroundColor = "yellow";
+            nombre.style.backgroundColor = "yellow";
+            poblacion.style.backgroundColor = "yellow";
+        }
+
+        function resetStyles() {
+            dni.style.backgroundColor = "white";
+            nombre.style.backgroundColor = "white";
+            edad.style.backgroundColor = "white";
+            poblacion.style.backgroundColor = "white";
+        }
+        required();
+        const formulario = document.getElementById("formulario");
+        formulario.addEventListener("submit", function (e) {
+            let isValid = true;
+            resetStyles(); // Resetear estilos al inicio
+            required(); // Colocar estilos requeridos al inicio
+
+            // Validación del DNI
+            if (!patronDNI.test(dni.value)) {
+                dni.style.backgroundColor = "orange";
+                errorDNI.innerHTML = "El DNI debe tener 9 dígitos y una letra";
+                isValid = false;
+            }
+
+            // Validación del nombre
+            if (nombre.value.length < 3 || nombre.value.length > 35) {
+                nombre.style.backgroundColor = "orange";
+                errorNombre.innerHTML = "El nombre debe tener entre 3 y 35 caracteres";
+                isValid = false;
+            }
+
+            // Validación de la edad
+            if (edad.value <= 0 || isNaN(edad.value)) {
+                edad.style.backgroundColor = "orange";
+                errorEdad.innerHTML = "La edad debe ser un número";
+                isValid = false;
+            }
+
+            // Validación de la población
+            if (poblacion.value === "") {
+                poblacion.style.backgroundColor = "orange";
+                errorPoblacion.innerHTML = "Seleccione una opción";
+                isValid = false;
+            }
+
+            // Si hay errores, evitar el envío
+            if (!isValid) {
+                e.preventDefault();
+                alert("Por favor, corrige los errores antes de enviar.");
+            } else {
+                alert("Formulario válido. Enviando...");
+                formulario.submit(); // Descomentar para enviar el formulario
+            }
+        });
+
     </script>
 </body>
 
