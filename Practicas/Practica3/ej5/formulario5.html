@@ -4,16 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Logueo</title>
+    <title>Ejercicio 5</title>
     <style>
-        /* Aquí puedes añadir tus estilos CSS personalizados */
         body {
+            background-color: #f2f2f2;
             margin: 0;
             padding: 0;
+            height: 100vh; /* Altura completa de la ventana */
+            position: relative; /* Necesario para el posicionamiento absoluto del formulario */
         }
+    
         form {
+            width: 300px;
+            height: auto; /* Cambiar a auto para que el formulario se ajuste al contenido */
             margin: 0;
-            padding: 0;
+            padding: 20px; /* Añadir un poco de padding para que no esté tan pegado */
+            background-color: white; /* Fondo blanco para el formulario */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+            position: absolute; /* Posicionamiento absoluto */
+            top: 50%; /* Mover el formulario a la mitad de la altura */
+            left: 50%; /* Mover el formulario a la mitad del ancho */
+            transform: translate(-50%, -50%); /* Ajustar la posición para centrarlo */
         }
     </style>
 </head>
@@ -22,7 +34,7 @@
 
     <form id="loginForm">
         <fieldset>
-            <legend>Formulario de Logueo</legend>
+            <legend>Ejercicio 5</legend>
             <label for="usuario">Usuario:</label>
             <input type="text" id="usuario" name="usuario" required><br>
 
@@ -52,7 +64,6 @@
                         document.getElementById("color").value = value;
                         document.body.style.backgroundColor = value;
                     }
-
                 });
             }
 
@@ -65,13 +76,19 @@
                     document.cookie = `usuario=${document.getElementById("usuario").value}; path=/`;
                     document.cookie = `clave=${document.getElementById("clave").value}; path=/`;
                     document.cookie = `color=${document.getElementById("color").value}; path=/`;
+                } else {
+                    // Borrar cookies
+                    document.cookie = "usuario=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    document.cookie = "clave=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    document.cookie = "color=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 }
-
-
             });
+
             document.getElementById("enviar").addEventListener("click", function () {
                 window.location.reload();
             });
+
+
         });
     </script>
 
