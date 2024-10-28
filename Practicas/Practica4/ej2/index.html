@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos</title>
+</head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        button{
+            background-color: transparent;
+            position: relative;
+            top: -380px;
+        }
+    </style>
+<body>
+    <h1>Galería de Fotos</h1>
+    <button onclick="fotoAnterior()" id="atras">
+        <img src="./imgs/izq.png"  width="40px" height="40px">
+    </button>
+    <img id="foto" src="" alt="imagen" width="1200" height="800">
+    <button onclick="siguienteFoto()" id="alante">
+        <img src="./imgs/der.png" width="40px" height="40px">
+    </button>
+
+    <script>
+        var fotos = [
+            "imgs/1.jpg", "imgs/2.jpg", "imgs/3.jpg", "imgs/4.jpg", "imgs/5.jpg",
+            "imgs/6.jpg", "imgs/7.jpg", "imgs/8.jpg", "imgs/9.jpg", "imgs/10.jpg"
+        ];
+        var indiceActual = -1;
+
+        function mostrarFoto(indice) {
+            const imgElement = document.getElementById('foto');
+            imgElement.src = fotos[indice];
+        }
+
+        function fotoRandom() {
+            var aleatorio = Math.floor(Math.random() * fotos.length);
+            indiceActual = aleatorio; // Actualiza el índice actual
+            mostrarFoto(indiceActual);
+        }
+
+        function siguienteFoto() {
+            if (indiceActual === -1) {
+                fotoRandom(); // Si no se ha mostrado ninguna foto, mostrar una aleatoria
+                return;
+            }
+            indiceActual = (indiceActual + 1) % fotos.length; // Incrementa y se reinicia al final
+            mostrarFoto(indiceActual);
+        }
+
+        function fotoAnterior() {
+            if (indiceActual === -1) {
+                fotoRandom(); // Si no se ha mostrado ninguna foto, mostrar una aleatoria
+                return;
+            }
+            indiceActual = (indiceActual - 1 + fotos.length) % fotos.length; // Decrementa y se reinicia al inicio
+            mostrarFoto(indiceActual);
+        }
+
+        // Inicializar con una foto aleatoria
+        fotoRandom();
+
+
+        let tiempoSinEventos = 3000; // Tiempo en milisegundos (3 segundos)
+        let temporizador;
+
+        function reiniciarTemporizador() {
+            clearTimeout(temporizador);
+            temporizador = setTimeout(() => {
+                siguienteFoto();
+                reiniciarTemporizador();
+            }, tiempoSinEventos);
+        }
+
+        // Escuchar eventos comunes
+        window.addEventListener('click', reiniciarTemporizador);
+        window.addEventListener('mousemove', reiniciarTemporizador);
+        window.addEventListener('keydown', reiniciarTemporizador);
+        window.addEventListener('scroll', reiniciarTemporizador);
+
+        // Iniciar el temporizador al cargar la página
+        reiniciarTemporizador();
+    </script>
+</body>
+
+</html>
