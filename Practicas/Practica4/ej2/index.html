@@ -53,6 +53,7 @@
             }
             indiceActual = (indiceActual + 1) % fotos.length; // Incrementa y se reinicia al final
             mostrarFoto(indiceActual);
+            reiniciarTemporizador();
         }
 
         function fotoAnterior() {
@@ -61,7 +62,10 @@
                 return;
             }
             indiceActual = (indiceActual - 1 + fotos.length) % fotos.length; // Decrementa y se reinicia al inicio
-            mostrarFoto(indiceActual);
+            mostrarFoto(indiceActual); 
+            reiniciarTemporizador()
+
+        
         }
 
         // Inicializar con una foto aleatoria
@@ -71,19 +75,11 @@
         let tiempoSinEventos = 3000; // Tiempo en milisegundos (3 segundos)
         let temporizador;
 
-        function reiniciarTemporizador() {
-            clearTimeout(temporizador);
-            temporizador = setTimeout(() => {
-                siguienteFoto();
-                reiniciarTemporizador();
-            }, tiempoSinEventos);
+        function reiniciarTemporizador() {clearTimeout(temporizador);temporizador = setTimeout(() => {siguienteFoto();reiniciarTemporizador()}, tiempoSinEventos);
         }
 
         // Escuchar eventos comunes
         window.addEventListener('click', reiniciarTemporizador);
-        window.addEventListener('mousemove', reiniciarTemporizador);
-        window.addEventListener('keydown', reiniciarTemporizador);
-        window.addEventListener('scroll', reiniciarTemporizador);
 
         // Iniciar el temporizador al cargar la página
         reiniciarTemporizador();

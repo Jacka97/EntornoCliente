@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+
+    <style>
+        *{ 
+            padding: 0;
+            margin: 0;
+        }
+        button{
+            width: 60px;
+            height: 30px;
+        }
+        #amarillo{
+            background-color: yellow;
+        }
+        #rojo{
+            background-color: red;
+        }
+        #verde{
+            background-color: green;
+        }
+        #azul{
+            background-color: blue;
+        }
+        #negro{
+            background-color: black;
+        }
+        #blanco{
+            background-color: white;
+        }
+        #canvas{
+            border: 3px solid red;
+        }
+        #canvas td{
+            border: 1px solid rgb(0, 0, 0);
+        }
+        #menu{
+            border-collapse: 1px  solid black;
+        }
+        #menu td{
+            border: 1px solid black;
+            margin: 0px;
+            padding: 0px;
+        }
+        #textoPincel{
+            font-size: 20px;
+            width: auto;
+            height: 30px;
+        }
+        
+
+        
+    </style>
+    </head>
+<body>
+    <script src="./js.js"></script>
+    <h1>TABLERO DE DIBUJO EN JAVASCRIPT</h1>
+
+    <h3>Haga CLICK en un color para comenzar a pintar</h3>
+
+    <table id="menu">
+        <tr>
+            <td><button id="amarillo"></button></td>
+            <td><button id="verde"></button></td>
+            <td><button id="negro"></button></td>
+            <td><button id="rojo"></button></td>
+            <td><button id="azul"></button></td>
+            <td><button id="blanco"></button></td>
+        </tr>
+        <tr>
+            <td colspan="6" id="textoPincel">Pincel no seleccionado</td>
+        </tr>
+    </table>
+    <h3>Seleccione un color y comience a pintar</h3>
+    <div id="tablaDibujo"></div>
+    
+</body>
+
+</html>
