@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 3</title>
+    <title>Ejercicio 4</title>
 
     <style>
         body {
@@ -28,12 +28,10 @@
             border: 1px solid black;
             cursor: pointer;
         }
-        #amarillo { background-color: yellow; }
-        #rojo { background-color: red; }
-        #verde { background-color: green; }
-        #azul { background-color: blue; }
-        #negro { background-color: black; }
-        #blanco { background-color: white; }
+        #facil { background-color: green; }
+        #medio { background-color: yellow; }
+        #dificil { background-color: orange; }
+        #vietnam { background-color: red; }
         #canvas {
             border: 3px solid red;
             display: inline-block;
@@ -60,25 +58,22 @@
     </head>
 <body>
     <script src="./js.js"></script>
-    <h1>TABLERO DE DIBUJO EN JAVASCRIPT</h1>
+    <h1>Buscaminas EN JAVASCRIPT</h1>
 
-    <h3>Haga CLICK en un color para comenzar a pintar</h3>
+    <h3>Selecciona la dificultad</h3>
 
  
-            <button id="amarillo"></button>
-            <button id="verde"></button>
-            <button id="negro"></button>
-            <button id="rojo"></button>
-            <button id="azul"></button>
-            <button id="blanco"></button>
+            <button id="facil">Facil</button>
+            <button id="medio">Medio</button>
+            <button id="dificil">Dificil</button>
+            <button id="vietnam">Vietnam</button>
             <br>
             
             <table id="menu">
         <tr>
-            <td colspan="6" id="textoPincel">Seleccione un color</td>
+            <td colspan="6" id="dificultad">Seleccione una dificultad</td>
         </tr>
     </table>
-    <h3>Seleccione un color y comience a pintar</h3>
     <div id="tablaDibujo"></div>
     
 </body>

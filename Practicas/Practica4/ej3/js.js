@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let colorSeleccionado = ""; // Color por defecto
+    let colorSeleccionado = "";
+    let pincel = false;
 
     function cambiarColor(event) {
         colorSeleccionado = event.target.id;
         document.getElementById("textoPincel").textContent = "Color seleccionado: " + colorSeleccionado;
-        console.log(colorSeleccionado);
+      
     }
 
     function crearTabla() {
@@ -28,29 +29,22 @@ document.addEventListener("DOMContentLoaded", function() {
                     console.log("ID de la celda:", celda.id); // Muestra el ID en la consola
                 });
 
-                celda.addEventListener("click", function() {
-                    switch(colorSeleccionado){
-                        case "rojo":
-                            celda.style.backgroundColor = "red";
-                            break;
-                        case "azul":
-                            celda.style.backgroundColor = "blue";
-                            break;
-                        case  "verde":
-                            celda.style.backgroundColor = "green";
-                            break;
-                        case "negro":
-                            celda.style.backgroundColor = "black";
-                            break;
-                        case "amarillo":
-                            celda.style.backgroundColor = "yellow";
-                            break;
-                        case "blanco":
-                            celda.style.backgroundColor = "white";
-                            break;
-                        
+                // Pintar cuando el ratón entra y el pincel está activado
+                celda.addEventListener("mouseover", function() {
+                    if (pincel) { // Solo pinta si el pincel está activado
+                        pintarCelda(celda);
                     }
-                    // Cambia el color de la celda
+                });
+
+                // Activar el pincel al hacer clic
+                celda.addEventListener("mousedown", function() {
+                    pincel = true; // Activar el modo pincel
+                    pintarCelda(celda); // Pintar la celda en la que se hace clic
+                });
+
+                // Desactivar el pincel al soltar el botón del ratón
+                document.addEventListener("mouseup", function() {
+                    pincel = false; // Desactivar el modo pincel
                 });
 
                 fila.appendChild(celda);
@@ -59,6 +53,29 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         tabla.appendChild(nuevaTabla);
+    }
+
+    function pintarCelda(celda) {
+        switch(colorSeleccionado) {
+            case "rojo":
+                celda.style.backgroundColor = "red";
+                break;
+            case "azul":
+                celda.style.backgroundColor = "blue";
+                break;
+            case "verde":
+                celda.style.backgroundColor = "green";
+                break;
+            case "negro":
+                celda.style.backgroundColor = "black";
+                break;
+            case "amarillo":
+                celda.style.backgroundColor = "yellow";
+                break;
+            case "blanco":
+                celda.style.backgroundColor = "white";
+                break;
+        }
     }
 
     window.onload = crearTabla;

@@ -75,7 +75,12 @@
         let tiempoSinEventos = 3000; // Tiempo en milisegundos (3 segundos)
         let temporizador;
 
-        function reiniciarTemporizador() {clearTimeout(temporizador);temporizador = setTimeout(() => {siguienteFoto();reiniciarTemporizador()}, tiempoSinEventos);
+        function reiniciarTemporizador() {
+            clearTimeout(temporizador);
+            temporizador = setTimeout(() => {
+                siguienteFoto();
+                reiniciarTemporizador()
+            }, tiempoSinEventos);
         }
 
         // Escuchar eventos comunes
