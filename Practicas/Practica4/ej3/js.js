@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         tabla.appendChild(nuevaTabla);
     }
-
+    //Funcion que pinta segun el color
     function pintarCelda(celda) {
         switch(colorSeleccionado) {
             case "rojo":

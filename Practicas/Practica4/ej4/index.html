@@ -12,15 +12,17 @@
             margin: 0;
             text-align: center;
             height: 100vh;
-            display: block; 
-            position: relative; 
+            display: block;
+            position: relative;
         }
+
         .container {
-            position: absolute; 
+            position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); 
+            transform: translate(-50%, -50%);
         }
+
         button {
             width: 60px;
             height: 30px;
@@ -28,54 +30,141 @@
             border: 1px solid black;
             cursor: pointer;
         }
-        #facil { background-color: green; }
-        #medio { background-color: yellow; }
-        #dificil { background-color: orange; }
-        #vietnam { background-color: red; }
+
+        #facil {
+            background-color: green;
+        }
+
+        #medio {
+            background-color: yellow;
+        }
+
+        #dificil {
+            background-color: orange;
+        }
+
+        #vietnam {
+            background-color: red;
+        }
+
         #canvas {
             border: 3px solid red;
             display: inline-block;
             margin-top: 20px;
         }
+
         #canvas td {
             border: 1px solid rgb(0, 0, 0);
             width: 20px;
             height: 20px;
         }
-        #menu{
+
+        #menu {
             display: inline;
         }
+
         #menu td {
             border: 1px solid black;
         }
-        #textoPincel {
-            font-size: 20px;
-            width: 400px;
-            height: 30px;
+
+
+        #reiniciar {
             text-align: center;
+            width: 100px;
+        }
+
+        #estado {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 200px;
+            top: 190px;
+        }
+        /*  Este css lo he copiado para relaizar la animacion del texto de "Has ganado/Has " */
+        .parpadea {
+
+            animation-name: parpadeo;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+            -webkit-animation-name: parpadeo;
+            -webkit-animation-duration: 1s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+        }
+
+        @-moz-keyframes parpadeo {
+            0% {
+                opacity: 1.0;
+            }
+
+            50% {
+                opacity: 0.0;
+            }
+
+            100% {
+                opacity: 1.0;
+            }
+        }
+
+        @-webkit-keyframes parpadeo {
+            0% {
+                opacity: 1.0;
+            }
+
+            50% {
+                opacity: 0.0;
+            }
+
+            100% {
+                opacity: 1.0;
+            }
+        }
+
+        @keyframes parpadeo {
+            0% {
+                opacity: 1.0;
+            }
+
+            50% {
+                opacity: 0.0;
+            }
+
+            100% {
+                opacity: 1.0;
+            }
         }
     </style>
-    </head>
+</head>
+
 <body>
     <script src="./js.js"></script>
     <h1>Buscaminas EN JAVASCRIPT</h1>
 
     <h3>Selecciona la dificultad</h3>
 
- 
-            <button id="facil">Facil</button>
-            <button id="medio">Medio</button>
-            <button id="dificil">Dificil</button>
-            <button id="vietnam">Vietnam</button>
-            <br>
-            
-            <table id="menu">
+
+    <button id="facil">Facil</button>
+    <button id="medio">Medio</button>
+    <button id="dificil">Dificil</button>
+    <button id="vietnam">Vietnam</button>
+    <br>
+
+    <table id="menu">
         <tr>
             <td colspan="6" id="dificultad">Seleccione una dificultad</td>
+            <td colspan="6"><span id="timer">Tiempo: 0s</span></td>
+
         </tr>
-    </table>
+    </table><br>
+    <span id="minas"></span><br>
+    <span id="minasRestantes"></span><br>
     <div id="tablaDibujo"></div>
-    
+    <button id="reiniciar">Reiniciar</button>
+    <div id="estado" class="parpadea"></div>
 </body>
 
 </html>

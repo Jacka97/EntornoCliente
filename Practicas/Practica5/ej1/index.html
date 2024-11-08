@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Empleados</title>
+    <style>
+
+        body{
+            color: white;
+            background-image: url(./img.jpeg);
+            background-size: 100% 100%;
+        }
+        header{
+            background-color: #333;
+        }
+        header button{
+            float:right
+        }
+        h2{
+            margin-top: 0;
+        }
+        #nuevoEmp{
+            color: black;
+            width: 600px;
+            height: 400px;
+            background-color: white;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button  onclick="location.href='nuevoEmpleado.html'">Nuevo empleado</button>
+    </header>
+    
+    <main>
+        <script  src="js.js"></script>
+        <div id="listaEmpleados">
+            <h2>Lista de Empleados</h2>
+            <table border="1px" id="empleados"></table>
+            <div id="prueba"></div>
+        </div>
+    </main>
+    <div id= nuevoEmp>
+    <form id="form" action="guardarEmpleado.php" method="post">
+        <fieldset><legend>Introduce los datos</legend></fieldset>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" name="edad" required>
+        <label for="cargo">Cargo</label>
+        <input type="text" id="cargo" name="cargo" required>
+        
+
+    </br>
+    </form>
+    </div>
+</body>
+</html>

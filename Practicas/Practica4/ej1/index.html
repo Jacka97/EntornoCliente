@@ -3,94 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Alta de Libros</title>
+    <titulo>Formulario de Alta de Libros</titulo>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 20px;
-        }
-        .hidden {
-            display: none;
         }
     </style>
 </head>
 <body>
     <h1>Alta de Libros</h1>
-    <form id="bookForm">
-        <label for="title">Título:</label><br>
-        <input type="text" id="title" required><br><br>
+    <form id="formu">
+        <label for="titulo">Título:</label><br>
+        <input type="text" id="titulo" required><br><br>
 
-        <label for="author">Autor:</label><br>
-        <input type="text" id="author" required><br><br>
+        <label for="autor">Autor:</label><br>
+        <input type="text" id="autor" required><br><br>
 
-        <label for="price">Precio:</label><br>
-        <input type="number" id="price" required><br><br>
+        <label for="precio">Precio:</label><br>
+        <input type="number" id="precio" required><br><br>
 
-        <label for="publisher">Editorial:</label><br>
-        <select id="publisher" required>
+        <label for="editorial">Editorial:</label><br>
+        <select id="editorial" required>
             <option value="">Selecciona una editorial</option>
         </select>
         <br>
-        <input type="text" id="newPublisher" placeholder="Añadir nueva editorial">
-        <button type="button" onclick="addPublisher()">Añadir</button><br><br>
+        <input type="text" id="newEditorial" placeholder="Añadir nueva editorial">
+        <button type="button" onclick="añadirEditorial()">Añadir</button><br><br>
 
         <label>Ubicación:</label><br>
-        <ul id="locations">
+        <ul id="direccion">
             <li>Dirección 1: Calle Falsa 123</li>
         </ul>
-        <button type="button" onclick="showMoreLocations()">+</button>
-        <button type="button" onclick="showLessLocations()">-</button>
+        <button type="button" onclick="masDirecciones()">+</button>
+        <button type="button" onclick="menosDirecciones()">-</button>
         <br><br>
 
         <button type="submit">Guardar Libro</button>
     </form>
 
     <script>
-        const publishers = [];
-        const locations = [
+        const editoriales = [];
+        const direccion = [
             "Calle Falsa 123",
             "Avenida Siempre Viva 742",
             "Boulevard de los Sueños Rotos 456"
         ];
-        let currentLocationIndex = 0;
-        const locationsPerPage = 1;
+        let pos = 0;
+        const dirPorPag = 1;
 
-        function addPublisher() {
-            const newPublisher = document.getElementById('newPublisher').value;
-            if (newPublisher && !publishers.includes(newPublisher)) {
-                publishers.push(newPublisher);
-                const select = document.getElementById('publisher');
+        function añadirEditorial() {
+            const newEditorial = document.getElementById('newEditorial').value;
+            if (newEditorial && !editoriales.includes(newEditorial)) {
+                editoriales.push(newEditorial);
+                const select = document.getElementById('editorial');
                 const option = document.createElement('option');
-                option.value = newPublisher;
-                option.textContent = newPublisher;
-                select.appendChild(option);
-                document.getElementById('newPublisher').value = ''; // Limpiar campo
+                option.value = newEditorial;
+                option.textContent = newEditorial;  // texto que se muestra en el select
+                select.appendChild(option);  // Agregar opción al select
+                document.getElementById('newEditorial').value = ''; // Limpiar campo
             }
         }
 
-        function showMoreLocations() {
-            const ul = document.getElementById('locations');
-            const nextLocation = locations[currentLocationIndex + locationsPerPage];
-            if (nextLocation) {
+        function masDirecciones() {
+            const ul = document.getElementById('direccion');
+            const nextDireccion = direccion[pos + dirPorPag];
+            if (nextDireccion) {
                 const li = document.createElement('li');
-                li.textContent = `Dirección ${currentLocationIndex + 2}: ${nextLocation}`;
-                ul.appendChild(li);
-                currentLocationIndex += locationsPerPage;
+                li.textContent = `Dirección ${pos + 2}: ${nextDireccion}`;
+                ul.appendChild(li);  // Agregar nueva dirección
+                pos += dirPorPag;  // Incrementar posición
             }
         }
 
-        function showLessLocations() {
-            const ul = document.getElementById('locations');
+        function menosDirecciones() {
+            const ul = document.getElementById('direccion');
             if (ul.children.length > 1) {
-                ul.removeChild(ul.lastChild);
-                currentLocationIndex -= locationsPerPage;
+                ul.removeChild(ul.lastChild);   // Eliminar última dirección
+                pos -= dirPorPag;   // Decrementar posición
             }
         }
 
-        document.getElementById('bookForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Aquí podrías agregar la lógica para guardar el libro
-            alert('Libro guardado: ' + document.getElementById('title').value);
+        document.getElementById('formu').addEventListener('submit', function(e) {
+            e.preventDefault();   // Evitar que se envíe el formulario
+            console.log('Libro guardado: ' + document.getElementById('titulo').value);
         });
     </script>
 </body>
