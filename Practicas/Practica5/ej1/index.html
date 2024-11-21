@@ -5,56 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Empleados</title>
     <style>
-
         body{
             color: white;
             background-image: url(./img.jpeg);
             background-size: 100% 100%;
+            width: 90%;
+            margin: 0 auto;
         }
         header{
             background-color: #333;
+            width: 100%;
+            height: 5vh;
         }
         header button{
-            float:right
+            margin-top: 1.3vh;
+            margin-right: 1%;
+            float:right;
         }
-        h2{
+        h2{ 
+            padding-top: 2vh;
             margin-top: 0;
+            text-align: center;
         }
         #nuevoEmp{
-            color: black;
-            width: 600px;
-            height: 400px;
-            background-color: white;
+            color: white;  
+            height: 45vh;
+            padding: 30px;
             border-radius: 20px;
+        }
+        #listaEmpleados{
+            height: 60vh;
+        }
+        #empleados{
+            width: 90%;
+            padding: 20px;
+            margin: 5%;
+        }
+        #empleados button{
+            float: right;
+        }
+        #form{
+            margin-left: 5%;
+            margin-right: 5%;
+            width: 90%;
+        }
+        th:last-child, td:last-child{
+            width: 15%;
+        }
+        #empleados button{
+            margin-right: 8%;
+        }
+        #form label{
+            display: block;
+            margin-top: 10px;
+        }
+        #form input:last-child{
+            margin-top: 20px;
+        }
+        #cargo{
+            margin-bottom: 1vh;
+        }
+        #contra{
+            width: 40%;
+        }
+        /* Estilos para ocultar y mostrar secciones */
+        .oculto {
+            display: none;
+        }
+        .visible {
+            display: block;
         }
     </style>
 </head>
 <body>
+    
     <header>
-        <button  onclick="location.href='nuevoEmpleado.html'">Nuevo empleado</button>
+        <button id="nuevoEmpleado">Nuevo empleado</button>
     </header>
     
     <main>
-        <script  src="js.js"></script>
-        <div id="listaEmpleados">
+        <script src="js.js"></script>
+        <div id="listaEmpleados" class="visible">
             <h2>Lista de Empleados</h2>
             <table border="1px" id="empleados"></table>
-            <div id="prueba"></div>
         </div>
     </main>
-    <div id= nuevoEmp>
-    <form id="form" action="guardarEmpleado.php" method="post">
-        <fieldset><legend>Introduce los datos</legend></fieldset>
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" required>
-        <label for="edad">Edad</label>
-        <input type="number" id="edad" name="edad" required>
-        <label for="cargo">Cargo</label>
-        <input type="text" id="cargo" name="cargo" required>
-        
 
-    </br>
-    </form>
+    <!-- Formulario para agregar un nuevo empleado -->
+    <div id="nuevoEmp" class="oculto">
+        <form id="form" action="index.html" method="post">
+            <h2>Nuevo empleado</h2>
+            <fieldset><legend>Introduce los datos</legend>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" name="edad" required><br>
+            <label for="cargo">Cargo</label>
+            <input type="text" id="cargo" name="cargo" required><br>
+            <input type="checkbox" id="contratado" name="contratado">
+            <label for="contratado" id="contra">Empleado contratado</label>
+            <br>
+            <input type="submit" id="Aceptar1" value="Aceptar">
+            <input type="reset" id="Cancelar1" value="Cancelar">
+            <div id="capa"></div>
+        </fieldset>
+        </form>
     </div>
+
+    <!-- Formulario para modificar un empleado -->
+    <div id="modEmple" class="oculto">
+        <form id="form2" action="index.html" method="post">
+            <h2>Modificar datos del empleado <h2 id="modDatos"></h2></h2>
+            <fieldset><legend>Introduce los datos</legend>
+            <label for="nombre2">Nombre</label>
+            <input type="text" id="nombre2" name="nombre2" required><br>
+            <label for="edad2">Edad</label>
+            <input type="number" id="edad2" name="edad2" required><br>
+            <label for="cargo2">Cargo</label>
+            <input type="text" id="cargo2" name="cargo2" required><br>
+            <input type="checkbox" id="contratado2" name="contratado2">
+            <label for="contratado" id="contra">Empleado contratado</label>
+            <br>
+            <input type="submit" id="Aceptar2" value="Aceptar">
+            <input type="reset" id="Cancelar2" value="Cancelar">
+        </fieldset>
+        </form>
+    </div>
+
 </body>
 </html>
