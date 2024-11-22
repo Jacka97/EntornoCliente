@@ -8,6 +8,7 @@
         body{
             color: white;
             background-image: url(./img.jpeg);
+            background-repeat: no-repeat;
             background-size: 100% 100%;
             width: 90%;
             margin: 0 auto;
@@ -124,10 +125,28 @@
             <label for="cargo2">Cargo</label>
             <input type="text" id="cargo2" name="cargo2" required><br>
             <input type="checkbox" id="contratado2" name="contratado2">
-            <label for="contratado" id="contra">Empleado contratado</label>
+            <label for="contratado" id="contra2">Empleado contratado</label>
             <br>
             <input type="submit" id="Aceptar2" value="Aceptar">
             <input type="reset" id="Cancelar2" value="Cancelar">
+        </fieldset>
+        </form>
+    </div>
+    <div id="eliEmple" class="oculto">
+        <form id="form3" action="index.html" method="post">
+            <h2>Eliminar datos del empleado <h2 id="modDatos"></h2></h2>
+            <fieldset><legend>Introduce los datos</legend>
+            <label for="nombre3">Nombre</label>
+            <input type="text" readonly id="nombre3" name="nombre3" required><br>
+            <label for="edad3">Edad</label>
+            <input type="number" readonly id="edad3" name="edad3" required><br>
+            <label for="cargo3">Cargo</label>
+            <input type="text" readonly id="cargo3" name="cargo3" required><br>
+            <input type="checkbox"  readonly id="contratado3" name="contratado3">
+            <label for="contratado" id="contra3">Empleado contratado</label>
+            <br>
+            <input type="submit" id="Aceptar3" value="Aceptar">
+            <input type="reset" id="Cancelar3" value="Cancelar">
         </fieldset>
         </form>
     </div>

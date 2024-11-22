@@ -62,10 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     var botonEliminar = document.createElement("button");
                     botonEliminar.classList.add('del');
                     botonEliminar.setAttribute("data-id", idEmpleado);
+                    if(empleadosRecibidos.length === 1 ){
+                        botonEliminar.disabled = true;
+                    }
                     botonEliminar.textContent = "Eliminar";
                     botonEliminar.addEventListener("click", function () {
                         var idEmpleado = this.getAttribute('data-id');
-                        eliminarEmpleado(idEmpleado);
+                        eliEmpleado(idEmpleado);
                     });
 
                     // Agregar los botones al td de acciones
@@ -103,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
             botonesModificar2[j].addEventListener("click", function () {
                 // Obtener el id del empleado desde el atributo 'data-id'
                 var idEmpleado = this.getAttribute('data-id');
-                eliminarEmpleado(idEmpleado);
+                eliEmpleado(idEmpleado);
             });
         }
 
@@ -123,6 +126,43 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('nuevoEmp').classList.remove('oculto');
         document.getElementById('nuevoEmp').classList.add('visible');
 
+    }
+    function eliEmpleado(idEmpleado) {
+        // Cambiar la visibilidad de las secciones
+        document.getElementById('listaEmpleados').classList.remove('visible');
+        document.getElementById('listaEmpleados').classList.add('oculto');
+        document.getElementById('eliEmple').classList.remove('oculto');
+        document.getElementById('eliEmple').classList.add('visible');
+        console.log("Iniciando metodo eliminar");
+
+        // Realizar la solicitud GET para obtener los datos del empleado
+        var peticion = new XMLHttpRequest();
+        peticion.open("GET", 'http://test-api.jtarrega.es/api/empleados/' + idEmpleado, true);
+
+        peticion.onreadystatechange = function () {
+            if (peticion.readyState === 4 && (peticion.status === 200 || peticion.status === 201 || peticion.status === 204)) {
+                var empleado = JSON.parse(peticion.responseText)[0];
+                console.log(empleado);
+                document.getElementById('modDatos').innerHTML += " " + empleado.id;
+                // Pre-llenar el formulario con los datos del empleado
+                document.getElementById("nombre3").value = empleado.nombre;
+                document.getElementById("edad3").value = empleado.edad;
+                document.getElementById("cargo3").value = empleado.cargo;
+                document.getElementById("contratado3").checked = empleado.contratado;
+
+
+            }
+        };
+        peticion.send();
+
+        document.getElementById("Aceptar3").addEventListener("click", function (event) {
+            event.preventDefault(); // Evitar la recarga de la página
+            document.getElementById('listaEmpleados').classList.remove('oculto');
+            document.getElementById('listaEmpleados').classList.add('visible');
+            document.getElementById('eliEmple').classList.remove('visible');
+            document.getElementById('eliEmple').classList.add('oculto');
+            eliminarEmpleado(idEmpleado);
+        });
     }
 
     // Función para agregar un nuevo empleado
@@ -263,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         peticion.onreadystatechange = function () {
             if (peticion.readyState === 4) {
-                if (peticion.status === 200) {
+                if (peticion.readyState == 4 && peticion.status == 200 || peticion.status == 201 || peticion.status == 204) {
                     console.log("Empleado eliminado con éxito");
                     cargarDatosBase(); // Recargar los datos después de eliminar un empleado
                     document.getElementById('capa').innerHTML = "Empleado eliminado con éxito.";
@@ -277,6 +317,13 @@ document.addEventListener("DOMContentLoaded", function () {
         peticion.send();
     }
 
+   
+    document.getElementById("Cancelar3").addEventListener("click", function () {
+        document.getElementById('listaEmpleados').classList.remove('oculto');
+        document.getElementById('listaEmpleados').classList.add('visible');
+        document.getElementById('eliEmple').classList.remove('visible');
+        document.getElementById('eliEmple').classList.add('oculto');
+    });
 
 
     document.getElementById("Cancelar1").addEventListener("click", function () {
